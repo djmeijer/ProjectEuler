@@ -5,7 +5,7 @@ namespace ProjectEuler
 {
     abstract class Solver
     {
-        protected string answer;
+        private string answer;
         private DateTime start, end;
 
         public Solver()
@@ -43,6 +43,11 @@ namespace ProjectEuler
         }
 
         protected void SetAnswer(long answer)
+        {
+            this.answer = answer.ToString();
+        }
+
+        protected void SetAnswer(double answer)
         {
             this.answer = answer.ToString();
         }
