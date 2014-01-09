@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace ProjectEuler
 {
@@ -14,23 +15,10 @@ namespace ProjectEuler
 
         protected override void DoCalculation()
         {
-            int[] primes = Primes.Get100000();
-            double k = 20, n = 1, i = 1;
-            bool check = true;
-            double[] a = new double[primes.Length];
-            double limit = Math.Sqrt(k);
-            while (primes[(int)i] <= k)
-            {
-                a[(int)i] = 1;
-                if (check)
-                    if (primes[(int)i] <= limit)
-                        a[(int)i] = Math.Floor(Math.Log(k) / Math.Log(primes[(int)i]));
-                    else
-                        check = false;
-                n *= Math.Pow(primes[(int)i], a[(int)i]);
-                i++;
-            }
-            this.SetAnswer(n);
+            long number = 20;
+            while (!(number % 20 == 0 && number % 19 == 0 && number % 18 == 0 && number % 17 == 0 && number % 16 == 0 && number % 15 == 0 && number % 14 == 0 && number % 13 == 0 && number % 12 == 0 && number % 11 == 0))
+                number += 20;
+            this.SetAnswer(number);
         }
     }
 }

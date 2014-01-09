@@ -23,8 +23,14 @@ namespace ProjectEuler
         {
             if (this.answer != "")
             {
+                TimeSpan ts = this.end - this.start;
+                string speed;
+                if (ts < new TimeSpan(0, 0, 1))
+                    speed = "Congratulations!";
+                else
+                    speed = "Come on, this should be faster!";
                 Console.WriteLine("The answer is: " + answer);
-                Console.WriteLine("Calculation was done in " + (this.end - this.start) + ".");
+                Console.WriteLine("Calculation was done in " + ts + ". " + speed);
                 Clipboard.SetText(answer);
             }
             else
@@ -48,6 +54,11 @@ namespace ProjectEuler
         }
 
         protected void SetAnswer(double answer)
+        {
+            this.answer = answer.ToString();
+        }
+
+        protected void SetAnswer(float answer)
         {
             this.answer = answer.ToString();
         }
