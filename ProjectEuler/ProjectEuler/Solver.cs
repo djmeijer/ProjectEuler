@@ -25,7 +25,7 @@ namespace ProjectEuler
             {
                 TimeSpan ts = this.end - this.start;
                 string speed;
-                if (ts < new TimeSpan(0, 0, 1))
+                if (ts < new TimeSpan(0, 1, 0))
                     speed = "Congratulations!";
                 else
                     speed = "Come on, this should be faster!";
