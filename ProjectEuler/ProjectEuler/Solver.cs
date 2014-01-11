@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Windows.Forms;
 
 namespace ProjectEuler
@@ -59,6 +60,11 @@ namespace ProjectEuler
         }
 
         protected void SetAnswer(float answer)
+        {
+            this.answer = answer.ToString();
+        }
+
+        protected void SetAnswer(BigInteger answer)
         {
             this.answer = answer.ToString();
         }

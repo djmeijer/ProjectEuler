@@ -36,6 +36,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Problems\1-9\ProblemSolver1.cs" />
+    <Compile Include="Problems\10-19\ProblemSolver13.cs" />
+    <Compile Include="Problems\10-19\ProblemSolver12.cs" />
+    <Compile Include="Problems\10-19\ProblemSolver11.cs" />
     <Compile Include="Problems\10-19\ProblemSolver10.cs" />
     <Compile Include="Problems\1-9\ProblemSolver9.cs" />
     <Compile Include="Problems\1-9\ProblemSolver8.cs" />
@@ -51,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
