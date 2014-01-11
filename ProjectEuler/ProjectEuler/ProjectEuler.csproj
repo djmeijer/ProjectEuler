@@ -35,12 +35,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Problems\ProblemSolver1.cs" />
-    <Compile Include="Problems\ProblemSolver6.cs" />
-    <Compile Include="Problems\ProblemSolver5.cs" />
-    <Compile Include="Problems\ProblemSolver4.cs" />
-    <Compile Include="Problems\ProblemSolver3.cs" />
-    <Compile Include="Problems\ProblemSolver2.cs" />
+    <Compile Include="Problems\1-9\ProblemSolver1.cs" />
+    <Compile Include="Problems\10-19\ProblemSolver10.cs" />
+    <Compile Include="Problems\1-9\ProblemSolver9.cs" />
+    <Compile Include="Problems\1-9\ProblemSolver8.cs" />
+    <Compile Include="Problems\1-9\ProblemSolver7.cs" />
+    <Compile Include="Problems\1-9\ProblemSolver6.cs" />
+    <Compile Include="Problems\1-9\ProblemSolver5.cs" />
+    <Compile Include="Problems\1-9\ProblemSolver4.cs" />
+    <Compile Include="Problems\1-9\ProblemSolver3.cs" />
+    <Compile Include="Problems\1-9\ProblemSolver2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Utilities\Primes.cs" />
