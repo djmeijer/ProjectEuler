@@ -23,6 +23,36 @@
 
         protected override void DoCalculation()
         {
+            long[] highestNumber = { 0, 0 };
+            for (int i = 2; i < 1000000; i++)
+            {
+                long result = this.GiveCollatzSequenceLength(i);
+                if (result > highestNumber[1])
+                {
+                    highestNumber[0] = i;
+                    highestNumber[1] = result;
+                }
+            }
+            this.SetAnswer(highestNumber[0]);
+        }
+
+        private long GiveCollatzSequenceLength(int i)
+        {
+            long count = 0, number = i;
+            while (number > 1)
+            {
+                if (number % 2 == 0)
+                {
+                    number /= 2;
+                    count++;
+                }
+                else
+                {
+                    number = 3 * number + 1;
+                    count++;
+                }
+            }
+            return count + 1;
         }
     }
 }
