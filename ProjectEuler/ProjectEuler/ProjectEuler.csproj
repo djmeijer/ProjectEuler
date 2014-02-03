@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Problems\1-9\ProblemSolver1.cs" />
+    <Compile Include="Problems\10-19\ProblemSolver18.cs" />
     <Compile Include="Problems\10-19\ProblemSolver17.cs" />
     <Compile Include="Problems\10-19\ProblemSolver16.cs" />
     <Compile Include="Problems\10-19\ProblemSolver15.cs" />
@@ -52,6 +53,8 @@
     <Compile Include="Problems\1-9\ProblemSolver4.cs" />
     <Compile Include="Problems\1-9\ProblemSolver3.cs" />
     <Compile Include="Problems\1-9\ProblemSolver2.cs" />
+    <Compile Include="Problems\20-29\ProblemSolver25.cs" />
+    <Compile Include="Problems\20-29\ProblemSolver20.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Utilities\Primes.cs" />
