@@ -1,4 +1,4 @@
-﻿namespace ProjectEuler
+﻿namespace ProjectEuler.Problems
 {
     class ProblemSolver15 : Solver
     {

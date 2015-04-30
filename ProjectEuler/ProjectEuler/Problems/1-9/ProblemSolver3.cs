@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
     class ProblemSolver3 : Solver
     {

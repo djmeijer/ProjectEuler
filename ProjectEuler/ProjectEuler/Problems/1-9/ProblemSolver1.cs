@@ -1,4 +1,4 @@
-﻿namespace ProjectEuler
+﻿namespace ProjectEuler.Problems
 {
     class ProblemSolver1 : Solver
     {
@@ -12,7 +12,7 @@
 
         protected override void DoCalculation()
         {
-            this.SetAnswer(SumDivisibleBy(3) + SumDivisibleBy(5) - SumDivisibleBy(15));
+            SetAnswer(SumDivisibleBy(3) + SumDivisibleBy(5) - SumDivisibleBy(15));
         }
 
         private int SumDivisibleBy(int n)

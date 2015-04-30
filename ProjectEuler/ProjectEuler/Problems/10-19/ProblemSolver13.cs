@@ -1,6 +1,7 @@
-﻿using System.Numerics;
+﻿using System.Linq;
+using System.Numerics;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
     class ProblemSolver13 : Solver
     {
@@ -215,9 +216,7 @@ namespace ProjectEuler
                                     "20849603980134001723930671666823555245252804609722",
                                     "53503534226472524250874054075591789781264330331690"
                                 };
-            BigInteger result = 0;
-            for (int i = 0; i < original.Length; i++)
-                result += BigInteger.Parse(original[i]);
+            BigInteger result = original.Aggregate<string, BigInteger>(0, (current, t) => current + BigInteger.Parse(t));
             this.SetAnswer(result.ToString().Substring(0, 10));
         }
     }

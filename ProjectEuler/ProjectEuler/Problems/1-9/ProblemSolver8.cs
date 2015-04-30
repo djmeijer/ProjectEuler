@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
     class ProblemSolver8 : Solver
     {

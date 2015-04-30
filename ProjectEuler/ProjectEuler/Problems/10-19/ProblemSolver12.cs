@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
     class ProblemSolver12 : Solver
     {
@@ -30,7 +30,7 @@ namespace ProjectEuler
             while (divisers < 502)
             {
                 number++;
-                long t = getTriangularNumber(number), d = getNumberOfDivisersFromTriangularNumber(t);
+                long t = GetTriangularNumber(number), d = GetNumberOfDivisersFromTriangularNumber(t);
                 if (d > divisers)
                 {
                     triangularNumber = t;
@@ -40,7 +40,7 @@ namespace ProjectEuler
             this.SetAnswer(triangularNumber);
         }
 
-        public static long getNumberOfDivisersFromTriangularNumber(long number)
+        public static long GetNumberOfDivisersFromTriangularNumber(long number)
         {
             long factorCount = 0;
             long sqrt = (int)Math.Ceiling(Math.Sqrt(number));
@@ -52,7 +52,7 @@ namespace ProjectEuler
             return factorCount;
         }
 
-        public static long getTriangularNumber(long number)
+        public static long GetTriangularNumber(long number)
         {
             long returnValue = 0;
             for (long i = 1; i <= number; i++)

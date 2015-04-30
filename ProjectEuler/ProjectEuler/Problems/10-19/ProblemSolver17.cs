@@ -1,7 +1,7 @@
-﻿using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
     class ProblemSolver17 : Solver
     {
@@ -34,11 +34,7 @@ namespace ProjectEuler
         private int GetNumberOfLetters(int i)
         {
             string text = this.GetTextFromNumber(i);
-            int numberOfLetters = 0;
-            foreach (char c in text)
-                if (c != ' ' && c != '-')
-                    numberOfLetters++;
-            return numberOfLetters;
+            return text.Count(c => c != ' ' && c != '-');
         }
 
         private string GetTextFromNumber(int i)

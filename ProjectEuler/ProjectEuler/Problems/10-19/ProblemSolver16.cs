@@ -1,6 +1,7 @@
-﻿using System.Numerics;
+﻿using System.Linq;
+using System.Numerics;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
     class ProblemSolver16 : Solver
     {
@@ -16,8 +17,7 @@ namespace ProjectEuler
         {
             BigInteger calc = BigInteger.Pow(2, 1000), count = 0;
             string numbers = calc.ToString();
-            for (int i = 0; i < numbers.Length; i++)
-                count += BigInteger.Parse(numbers[i].ToString());
+            count = numbers.Aggregate(count, (current, t) => current + BigInteger.Parse(t.ToString()));
             this.SetAnswer(count);
         }
     }
