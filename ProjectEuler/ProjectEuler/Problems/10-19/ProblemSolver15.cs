@@ -1,6 +1,6 @@
 ﻿namespace ProjectEuler.Problems
 {
-    class ProblemSolver15 : Solver
+    internal class ProblemSolver15 : Solver
     {
         /* Lattice paths
          * 
@@ -17,12 +17,12 @@
             const int gridSize = 20;
             long paths = 1;
 
-            for (int i = 0; i < gridSize; i++)
+            for (var i = 0; i < gridSize; i++)
             {
                 paths *= (2 * gridSize) - i;
                 paths /= i + 1;
             }
-            this.SetAnswer(paths);
+            SetAnswer(paths);
         }
     }
 }

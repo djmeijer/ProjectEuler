@@ -59,6 +59,7 @@
     <Compile Include="Problems\20-29\ProblemSolver20.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Solver.cs" />
+    <Compile Include="Utilities\Date.cs" />
     <Compile Include="Utilities\Primes.cs" />
   </ItemGroup>
   <ItemGroup>

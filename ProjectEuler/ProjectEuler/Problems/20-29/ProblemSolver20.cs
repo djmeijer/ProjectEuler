@@ -1,8 +1,8 @@
 ﻿using System.Numerics;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
-    class ProblemSolver20 : Solver
+    internal class ProblemSolver20 : Solver
     {
         /* Factorial digit sum
          * 
@@ -18,8 +18,8 @@ namespace ProjectEuler
 
         protected override void DoCalculation()
         {
-            BigInteger factorial = this.GetFactorial(100);
-            this.SetAnswer(this.GetFactorialSum(factorial));
+            var factorial = GetFactorial(100);
+            SetAnswer(GetFactorialSum(factorial));
         }
 
         private BigInteger GetFactorial(int i)
@@ -39,10 +39,10 @@ namespace ProjectEuler
             BigInteger sum = 0;
             while (factorial >= 10)
             {
-                sum += factorial % 10;
+                sum += factorial%10;
                 factorial /= 10;
             }
-            sum += factorial % 10;
+            sum += factorial%10;
             return sum;
         }
     }

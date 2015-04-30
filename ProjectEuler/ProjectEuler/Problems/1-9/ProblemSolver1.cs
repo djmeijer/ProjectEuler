@@ -1,6 +1,6 @@
 ﻿namespace ProjectEuler.Problems
 {
-    class ProblemSolver1 : Solver
+    internal class ProblemSolver1 : Solver
     {
         /* Multiples of 3 and 5
          * 

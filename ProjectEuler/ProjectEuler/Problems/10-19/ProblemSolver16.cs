@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace ProjectEuler.Problems
 {
-    class ProblemSolver16 : Solver
+    internal class ProblemSolver16 : Solver
     {
         /* Power digit sum
          * 
@@ -16,9 +16,9 @@ namespace ProjectEuler.Problems
         protected override void DoCalculation()
         {
             BigInteger calc = BigInteger.Pow(2, 1000), count = 0;
-            string numbers = calc.ToString();
+            var numbers = calc.ToString();
             count = numbers.Aggregate(count, (current, t) => current + BigInteger.Parse(t.ToString()));
-            this.SetAnswer(count);
+            SetAnswer(count);
         }
     }
 }

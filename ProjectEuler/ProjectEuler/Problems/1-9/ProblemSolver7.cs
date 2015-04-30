@@ -1,6 +1,8 @@
-﻿namespace ProjectEuler.Problems
+﻿using ProjectEuler.Utilities;
+
+namespace ProjectEuler.Problems
 {
-    class ProblemSolver7 : Solver
+    internal class ProblemSolver7 : Solver
     {
         /* 10001st prime
          * 
@@ -11,9 +13,9 @@
 
         protected override void DoCalculation()
         {
-            int[] primes = Primes.Get();
-            int prime = 10001;
-            this.SetAnswer(primes[prime - 1]);
+            var primes = Primes.Get();
+            var prime = 10001;
+            SetAnswer(primes[prime - 1]);
         }
     }
 }

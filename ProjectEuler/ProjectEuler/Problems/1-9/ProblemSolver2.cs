@@ -1,6 +1,6 @@
 ﻿namespace ProjectEuler.Problems
 {
-    class ProblemSolver2 : Solver
+    internal class ProblemSolver2 : Solver
     {
         /* Even Fibonacci numbers
          * 

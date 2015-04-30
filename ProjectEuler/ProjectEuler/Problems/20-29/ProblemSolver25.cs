@@ -1,8 +1,8 @@
 ﻿using System.Numerics;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
-    class ProblemSolver25 : Solver
+    internal class ProblemSolver25 : Solver
     {
         /* 1000-digit Fibonacci number
          * 
@@ -33,19 +33,19 @@ namespace ProjectEuler
         protected override void DoCalculation()
         {
             BigInteger term = 1, a = 0, b = 1, c = 0;
-            while (this.GetLength(c) < 1000)
+            while (GetLength(c) < 1000)
             {
                 term++;
                 c = a + b;
                 a = b;
                 b = c;
             }
-            this.SetAnswer(term);
+            SetAnswer(term);
         }
 
         private int GetLength(BigInteger current)
         {
-            int length= 0;
+            var length = 0;
             while (current >= 10)
             {
                 length++;

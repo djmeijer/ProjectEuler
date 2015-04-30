@@ -2,7 +2,7 @@
 
 namespace ProjectEuler.Problems
 {
-    class ProblemSolver3 : Solver
+    internal class ProblemSolver3 : Solver
     {
         /* Largest prime factor
          * 
@@ -15,7 +15,7 @@ namespace ProjectEuler.Problems
         {
             int lastFactor = 0, factor = 0;
             double maxFactor = 0;
-            long n = 600851475143;
+            var n = 600851475143;
             if (n % 2 == 0)
             {
                 lastFactor = 2;
@@ -40,9 +40,9 @@ namespace ProjectEuler.Problems
                 factor += 2;
             }
             if (n == 1)
-                this.SetAnswer(lastFactor);
+                SetAnswer(lastFactor);
             else
-                this.SetAnswer(n);            
+                SetAnswer(n);
         }
     }
 }

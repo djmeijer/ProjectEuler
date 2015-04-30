@@ -2,7 +2,7 @@
 
 namespace ProjectEuler.Problems
 {
-    class ProblemSolver12 : Solver
+    internal class ProblemSolver12 : Solver
     {
         /* Highly divisible triangular number
          * 
@@ -37,13 +37,13 @@ namespace ProjectEuler.Problems
                     divisers = d;
                 }
             }
-            this.SetAnswer(triangularNumber);
+            SetAnswer(triangularNumber);
         }
 
         public static long GetNumberOfDivisersFromTriangularNumber(long number)
         {
             long factorCount = 0;
-            long sqrt = (int)Math.Ceiling(Math.Sqrt(number));
+            long sqrt = (int) Math.Ceiling(Math.Sqrt(number));
             for (long i = 1; i < sqrt; i++)
                 if (number % i == 0)
                     factorCount += 2;
