@@ -1,4 +1,4 @@
-﻿namespace ProjectEuler
+﻿namespace ProjectEuler.Problems
 {
     class ProblemSolver14 : Solver
     {
@@ -24,7 +24,7 @@
         protected override void DoCalculation()
         {
             long[] highestNumber = { 0, 0 };
-            for (int i = 2; i < 1000000; i++)
+            for (var i = 2; i < 1000000; i++)
             {
                 long result = this.GiveCollatzSequenceLength(i);
                 if (result > highestNumber[1])
