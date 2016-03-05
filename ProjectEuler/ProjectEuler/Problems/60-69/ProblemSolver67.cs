@@ -42,6 +42,16 @@ namespace ProjectEuler
                     .ToList())
                 .ToList();
 
+         /*                              3
+         *                              7 4
+         *                             2 4 6
+         *                            8 5 9 3
+            \\\*/
+
+            var multipliers = new[] { 10, 20, 30, 40 };
+            var multiplied = multipliers.Aggregate(5, (a, b) => a * b);
+            Console.WriteLine(multiplied); //Output 1200000 ((((5*10)*20)*30)*40)
+
             int maximumTotal = triangle.Aggregate(
                 new List<int> { 0 },
                 (currentMaxima, nextRow) =>
