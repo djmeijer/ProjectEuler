@@ -1,8 +1,9 @@
-﻿using System.Numerics;
+﻿using System.Linq;
+using System.Numerics;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
-    class ProblemSolver16 : Solver
+    internal class ProblemSolver16 : Solver
     {
         /* Power digit sum
          * 
@@ -15,10 +16,9 @@ namespace ProjectEuler
         protected override void DoCalculation()
         {
             BigInteger calc = BigInteger.Pow(2, 1000), count = 0;
-            string numbers = calc.ToString();
-            for (int i = 0; i < numbers.Length; i++)
-                count += BigInteger.Parse(numbers[i].ToString());
-            this.SetAnswer(count);
+            var numbers = calc.ToString();
+            count = numbers.Aggregate(count, (current, t) => current + BigInteger.Parse(t.ToString()));
+            SetAnswer(count);
         }
     }
 }

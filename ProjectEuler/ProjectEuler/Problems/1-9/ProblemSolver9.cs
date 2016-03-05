@@ -1,6 +1,6 @@
-﻿namespace ProjectEuler
+﻿namespace ProjectEuler.Problems
 {
-    class ProblemSolver9 : Solver
+    internal class ProblemSolver9 : Solver
     {
         /* Special Pythagorean triplet
          * 
@@ -14,11 +14,11 @@
 
         protected override void DoCalculation()
         {
-            for (int a = 0; a < 1001; a++)
-                for (int b = 0; b < 1001; b++)
-                    for (int c = 0; c < 1001; c++)
+            for (var a = 0; a < 1001; a++)
+                for (var b = 0; b < 1001; b++)
+                    for (var c = 0; c < 1001; c++)
                         if (a < b && b < c && a * a + b * b == c * c && a + b + c == 1000)
-                            this.SetAnswer(a * b * c);
+                            SetAnswer(a * b * c);
         }
     }
 }

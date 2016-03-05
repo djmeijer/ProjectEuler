@@ -1,6 +1,8 @@
-﻿namespace ProjectEuler
+﻿using ProjectEuler.Utilities;
+
+namespace ProjectEuler.Problems
 {
-    class ProblemSolver10 : Solver
+    internal class ProblemSolver10 : Solver
     {
         /* Summation of primes
          * 
@@ -11,8 +13,8 @@
 
         protected override void DoCalculation()
         {
-            int i = 0;
-            int[] primes = Primes.Get();
+            var i = 0;
+            var primes = Primes.Get();
             long total = 0;
             while (true)
             {
@@ -22,7 +24,7 @@
                     break;
                 i++;
             }
-            this.SetAnswer(total);
+            SetAnswer(total);
         }
     }
 }

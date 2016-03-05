@@ -1,9 +1,9 @@
-﻿using System.Linq;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Linq;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
-    class ProblemSolver17 : Solver
+    internal class ProblemSolver17 : Solver
     {
         /* Number letter counts
          * 
@@ -25,52 +25,52 @@ namespace ProjectEuler
 
         protected override void DoCalculation()
         {
-            int lettersUsed = 0;
-            for (int i = 1; i <= 1000; i++)
-                lettersUsed += this.GetNumberOfLetters(i);
-            this.SetAnswer(lettersUsed);
+            var lettersUsed = 0;
+            for (var i = 1; i <= 1000; i++)
+                lettersUsed += GetNumberOfLetters(i);
+            SetAnswer(lettersUsed);
         }
 
         private int GetNumberOfLetters(int i)
         {
-            string text = this.GetTextFromNumber(i);
-            int numberOfLetters = 0;
-            foreach (char c in text)
-                if (c != ' ' && c != '-')
-                    numberOfLetters++;
-            return numberOfLetters;
+            var text = GetTextFromNumber(i);
+            return text.Count(c => c != ' ' && c != '-');
         }
 
         private string GetTextFromNumber(int i)
         {
-            List<int> digits = this.GetDigitsList(i);
+            var digits = GetDigitsList(i);
+
             #region Text
-            string text = "";
-            string[] words = new string[] {
-                "one",          // 0
-                "two",          // 1
-                "three",        // 2
-                "four",         // 3
-                "five",         // 4
-                "six",          // 5
-                "seven",        // 6
-                "eight",        // 7
-                "nine",         // 8
-                "ten",          // 9
-                "eleven",       // 10
-                "twelve",       // 11
-                "teen",         // 12
-                "thir",         // 13
-                "fif",          // 14
-                "eigh",         // 15
-                "twen",         // 16
-                "ty",           // 17
-                "eighty",       // 18
-                "hundred",      // 19
-                "thousand",     // 20
-                "and",          // 21
-                "for"           // 22
+
+            var text = "";
+            string[] words =
+            {
+                "one", // 0
+                "two", // 1
+                "three", // 2
+                "four", // 3
+                "five", // 4
+                "six", // 5
+                "seven", // 6
+                "eight", // 7
+                "nine", // 8
+                "ten", // 9
+                "eleven", // 10
+                "twelve", // 11
+                "teen", // 12
+                "thir", // 13
+                "fif", // 14
+                "eigh", // 15
+                "twen", // 16
+                "ty", // 17
+                "eighty", // 18
+                "hundred", // 19
+                "thousand", // 20
+                "and", // 21
+                "for" // 22
             };
+
             #endregion
 
             if (digits.Count == 4)
@@ -95,7 +95,7 @@ namespace ProjectEuler
                             text += words[i];
                         else if (i == 15)
                             text += words[i - 1];
-                        else if ((new int[] { 14, 16, 17, 19 }).Contains(i))
+                        else if ((new[] {14, 16, 17, 19}).Contains(i))
                             text += words[i - 11];
                         else if (i == 18)
                             text += words[i - 3];
@@ -122,9 +122,9 @@ namespace ProjectEuler
             return text;
         }
 
-        private List<int> GetDigitsList(int i)
+        private static List<int> GetDigitsList(int i)
         {
-            List<int> digits = new List<int>();
+            var digits = new List<int>();
             while (i >= 10)
             {
                 digits.Add(i % 10);

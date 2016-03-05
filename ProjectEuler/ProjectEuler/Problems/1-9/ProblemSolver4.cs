@@ -1,6 +1,6 @@
-﻿namespace ProjectEuler
+﻿namespace ProjectEuler.Problems
 {
-    class ProblemSolver4 : Solver
+    internal class ProblemSolver4 : Solver
     {
         /* Largest palindrome product
          * 
@@ -33,9 +33,9 @@
                         largestPalindrome = a * b;
                     b -= db;
                 }
-            a -= 1;
+                a -= 1;
             }
-            this.SetAnswer(largestPalindrome);
+            SetAnswer(largestPalindrome);
         }
 
         private bool IsPalindrome(int n)
@@ -45,7 +45,7 @@
 
         private int Reverse(int n)
         {
-            int reversed = 0;
+            var reversed = 0;
             while (n > 0)
             {
                 reversed = 10 * reversed + n % 10;

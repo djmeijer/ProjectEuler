@@ -1,6 +1,6 @@
-﻿namespace ProjectEuler
+﻿namespace ProjectEuler.Problems
 {
-    class ProblemSolver2 : Solver
+    internal class ProblemSolver2 : Solver
     {
         /* Even Fibonacci numbers
          * 
@@ -13,7 +13,8 @@
 
         protected override void DoCalculation()
         {
-            int limit = 4000000, sum = 0, a = 1, b = 1, c = a + b;
+            const int limit = 4000000;
+            int sum = 0, a = 1, b = 1, c = a + b;
             while (c < limit)
             {
                 sum += c;
@@ -21,7 +22,7 @@
                 b = c + a;
                 c = a + b;
             }
-            this.SetAnswer(sum);
+            SetAnswer(sum);
         }
     }
 }

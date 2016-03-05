@@ -1,6 +1,6 @@
-﻿namespace ProjectEuler
+﻿namespace ProjectEuler.Problems
 {
-    class ProblemSolver6 : Solver
+    internal class ProblemSolver6 : Solver
     {
         /* Sum square difference
          * 
@@ -18,13 +18,13 @@
         protected override void DoCalculation()
         {
             int sumOfSquares = 0, squareOfSum = 0;
-            for (int i = 1; i < 101; i++)
+            for (var i = 1; i < 101; i++)
             {
                 sumOfSquares += i * i;
                 squareOfSum += i;
             }
             squareOfSum *= squareOfSum;
-            this.SetAnswer(squareOfSum - sumOfSquares);
+            SetAnswer(squareOfSum - sumOfSquares);
         }
     }
 }

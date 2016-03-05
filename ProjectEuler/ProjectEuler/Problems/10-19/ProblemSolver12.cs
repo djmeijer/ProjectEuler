@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace ProjectEuler
+namespace ProjectEuler.Problems
 {
-    class ProblemSolver12 : Solver
+    internal class ProblemSolver12 : Solver
     {
         /* Highly divisible triangular number
          * 
@@ -30,20 +30,20 @@ namespace ProjectEuler
             while (divisers < 502)
             {
                 number++;
-                long t = getTriangularNumber(number), d = getNumberOfDivisersFromTriangularNumber(t);
+                long t = GetTriangularNumber(number), d = GetNumberOfDivisersFromTriangularNumber(t);
                 if (d > divisers)
                 {
                     triangularNumber = t;
                     divisers = d;
                 }
             }
-            this.SetAnswer(triangularNumber);
+            SetAnswer(triangularNumber);
         }
 
-        public static long getNumberOfDivisersFromTriangularNumber(long number)
+        public static long GetNumberOfDivisersFromTriangularNumber(long number)
         {
             long factorCount = 0;
-            long sqrt = (int)Math.Ceiling(Math.Sqrt(number));
+            long sqrt = (int) Math.Ceiling(Math.Sqrt(number));
             for (long i = 1; i < sqrt; i++)
                 if (number % i == 0)
                     factorCount += 2;
@@ -52,7 +52,7 @@ namespace ProjectEuler
             return factorCount;
         }
 
-        public static long getTriangularNumber(long number)
+        public static long GetTriangularNumber(long number)
         {
             long returnValue = 0;
             for (long i = 1; i <= number; i++)
