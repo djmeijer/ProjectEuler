@@ -1,6 +1,6 @@
 ﻿namespace ProjectEuler.Problems
 {
-    class ProblemSolver21 : Solver
+    class ProblemSolver24 : Solver
     {
         /* Amicable numbers
          * 
@@ -17,19 +17,16 @@
 
         protected override void DoCalculation()
         {
-            SetAnswer(31626);
+            SetAnswer(2783915460);
         }
 
         // Haskell solution
 
-        // main = print t
-        
-        // d i = sum[x | x < -[1..i - 1], mod i x == 0]
-        // p = [[x, y]|x<-[1..9999],y<-[x..9999],x/=y,d x==y,d y==x]
-        // t = sum[sum[x, y] |[x, y] < -p]
+        // import Data.List
+        // main = print $ take 1 $ drop 999999 $ sort $ permutations[0..9]
 
         // -- Compiling: ghc -O2 -threaded<filename>.hs
         // -- Execution: ./<filename.hs> +RTS -N
-        // -- Done in about 3s, answer: 31626.
-    }
+        // -- Done in about 6s, answer: 2783915460.
+  }
 }

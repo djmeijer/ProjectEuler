@@ -87,8 +87,6 @@ namespace ProjectEuler.Problems
                 if (i >= 0 && i <= 19)
                     if (i > 0 && i <= 12)
                         text += words[i - 1];
-                    else if (i == 0)
-                        ;
                     else
                     {
                         if (i == 13)
