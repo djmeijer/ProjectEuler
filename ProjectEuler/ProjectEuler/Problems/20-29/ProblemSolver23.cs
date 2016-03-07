@@ -70,13 +70,13 @@ namespace ProjectEuler.Problems
          * import Data.List
          * main = print n
          *
-         * --a = [x | x < -[1..28123], sum[y | y < -[1..x - 1], rem x y == 0] > x]
-         * --r x = length[[y, z] | y < -a, z<-a, y+z==x] > 0
-         * --n = sum $ nub $ filter(not.r)[x|x<-[1..28123],y<-a, z<-a]
+         * --a = [x|x<-[1..28123],sum[y|y<-[1..x-1],rem x y==0]>x]
+         * --r x = length[[y,z]|y<-a,z<-a,y+z==x]>0
+         * --n = sum $ nub $ filter(not.r)[x|x<-[1..28123],y<-a,z<-a]
          *
-         * a = [x | x < -[1..28123], sum[y | y < -[1..x - 1], rem x y == 0] > x]
-         * c = [x + y | x < -a, y < -a]
-         * n = sum[x | x < -[1..28123], not(elem x c)]
+         * a = [x|x<-[1..28123],sum[y|y<-[1..x-1],rem x y==0]>x]
+         * c = [x+y|x<-a,y<-a]
+         * n = sum[x|x<-[1..28123],not(elem x c)]
          */
   }
 }
