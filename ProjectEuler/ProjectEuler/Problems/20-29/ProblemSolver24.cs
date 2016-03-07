@@ -20,13 +20,14 @@
             SetAnswer(2783915460);
         }
 
-        // Haskell solution
-
-        // import Data.List
-        // main = print $ take 1 $ drop 999999 $ sort $ permutations[0..9]
-
-        // -- Compiling: ghc -O2 -threaded<filename>.hs
-        // -- Execution: ./<filename.hs> +RTS -N
-        // -- Done in about 6s, answer: 2783915460.
+        /* Haskell solution
+         *
+         * import Data.List
+         * main = print $ take 1 $ drop 999999 $ sort $ permutations[0..9]
+         *
+         * -- Compiling: ghc -O2 -threaded<filename>.hs
+         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Done in about 6s, answer: 2783915460.
+         */
   }
 }

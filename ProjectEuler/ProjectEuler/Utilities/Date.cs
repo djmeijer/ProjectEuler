@@ -1,10 +1,10 @@
 ﻿namespace ProjectEuler.Utilities
 {
-    static class Date
+    internal static class Date
     {
     }
 
-    enum Day
+    internal enum Day
     {
         Sunday = 1,
         Monday = 2,

@@ -22,7 +22,7 @@
                 }
                 else
                 {
-                    b = 990; //The largest number less than or equal 999 and divisible by 11
+                    b = 990; // The largest number less than or equal 999 and divisible by 11
                     db = 11;
                 }
                 while (b >= a)

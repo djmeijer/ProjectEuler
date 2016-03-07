@@ -8,7 +8,7 @@ namespace ProjectEuler
         [STAThread]
         static void Main()
         {
-            Solver solver = new ProblemSolver24();
+            Solver solver = new ProblemSolver23();
             solver.ShowAnswer();
         }
     }
