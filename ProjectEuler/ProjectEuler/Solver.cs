@@ -6,9 +6,9 @@ namespace ProjectEuler
 {
     internal abstract class Solver
     {
+        private string _answer;
         private DateTime _end;
         private DateTime _start;
-        private string _answer;
 
         protected abstract void DoCalculation();
 
@@ -38,37 +38,37 @@ namespace ProjectEuler
 
         protected void SetAnswer(string answer)
         {
-            this._answer = answer;
+            _answer = answer;
         }
 
         protected void SetAnswer(int answer)
         {
-            this._answer = answer.ToString();
+            _answer = answer.ToString();
         }
 
         protected void SetAnswer(long answer)
         {
-            this._answer = answer.ToString();
+            _answer = answer.ToString();
         }
 
         protected void SetAnswer(double answer)
         {
-            this._answer = answer.ToString();
+            _answer = answer.ToString();
         }
 
         protected void SetAnswer(float answer)
         {
-            this._answer = answer.ToString();
+            _answer = answer.ToString();
         }
 
         protected void SetAnswer(BigInteger answer)
         {
-            this._answer = answer.ToString();
+            _answer = answer.ToString();
         }
 
         protected void SetAnswer(bool answer)
         {
-            this._answer = answer.ToString();
+            _answer = answer.ToString();
         }
     }
 }

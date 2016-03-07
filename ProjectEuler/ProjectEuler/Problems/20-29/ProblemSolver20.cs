@@ -39,10 +39,10 @@ namespace ProjectEuler.Problems
             BigInteger sum = 0;
             while (factorial >= 10)
             {
-                sum += factorial%10;
+                sum += factorial % 10;
                 factorial /= 10;
             }
-            sum += factorial%10;
+            sum += factorial % 10;
             return sum;
         }
     }

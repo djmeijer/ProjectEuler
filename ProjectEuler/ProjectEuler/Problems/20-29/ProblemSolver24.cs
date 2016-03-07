@@ -1,6 +1,6 @@
 ﻿namespace ProjectEuler.Problems
 {
-    class ProblemSolver24 : Solver
+    internal class ProblemSolver24 : Solver
     {
         /* Amicable numbers
          * 
@@ -29,5 +29,5 @@
          * -- Execution: ./<filename.hs> +RTS -N
          * -- Done in about 6s, answer: 2783915460.
          */
-  }
+    }
 }

@@ -18,7 +18,7 @@
         private int SumDivisibleBy(int n)
         {
             int target = 999, p = target / n;
-            return n * (p * (p + 1)) / 2;
+            return n * p * (p + 1) / 2;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace ProjectEuler.Problems
 {
-    class ProblemSolver21 : Solver
+    internal class ProblemSolver21 : Solver
     {
         /* Amicable numbers
          * 

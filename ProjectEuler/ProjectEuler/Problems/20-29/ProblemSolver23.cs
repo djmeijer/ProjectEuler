@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ProjectEuler.Problems
 {
-    class ProblemSolver23 : Solver
+    internal class ProblemSolver23 : Solver
     {
         /* Non-abundant sums
 
@@ -29,12 +28,13 @@ namespace ProjectEuler.Problems
 
         protected override void DoCalculation()
         {
-            int limit = 28123;
+            var limit = 28123;
             IEnumerable<int> abundantNumbers = GetAbundantNumbers(limit).ToList();
-            IEnumerable<int> abundantSums = new HashSet<int>(abundantNumbers.SelectMany(a => abundantNumbers.Select(b => a + b)));
+            IEnumerable<int> abundantSums =
+                new HashSet<int>(abundantNumbers.SelectMany(a => abundantNumbers.Select(b => a + b)));
 
-            int sum = 0;
-            for (int i = 1; i <= limit; i++)
+            var sum = 0;
+            for (var i = 1; i <= limit; i++)
             {
                 if (!abundantSums.Contains(i))
                 {
@@ -46,11 +46,11 @@ namespace ProjectEuler.Problems
 
         private IEnumerable<int> GetAbundantNumbers(int upperLimit)
         {
-            List<int> abundantNumbers = new List<int>();
-            for (int i = 1; i <= upperLimit; i++)
+            var abundantNumbers = new List<int>();
+            for (var i = 1; i <= upperLimit; i++)
             {
-                int sum = 0;
-                for (int j = 1; j < i; j++)
+                var sum = 0;
+                for (var j = 1; j < i; j++)
                 {
                     if (i % j == 0)
                     {
@@ -78,5 +78,5 @@ namespace ProjectEuler.Problems
          * c = [x+y|x<-a,y<-a]
          * n = sum[x|x<-[1..28123],not(elem x c)]
          */
-  }
+    }
 }

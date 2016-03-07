@@ -93,7 +93,7 @@ namespace ProjectEuler.Problems
                             text += words[i];
                         else if (i == 15)
                             text += words[i - 1];
-                        else if ((new[] {14, 16, 17, 19}).Contains(i))
+                        else if (new[] {14, 16, 17, 19}.Contains(i))
                             text += words[i - 11];
                         else if (i == 18)
                             text += words[i - 3];

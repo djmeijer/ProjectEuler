@@ -34,7 +34,7 @@ namespace ProjectEuler.Problems
                 case 1:
                     return 31;
                 case 2:
-                    return (IsLeapYear(year) ? 29 : 28);
+                    return IsLeapYear(year) ? 29 : 28;
                 case 3:
                     return 31;
                 case 4:
