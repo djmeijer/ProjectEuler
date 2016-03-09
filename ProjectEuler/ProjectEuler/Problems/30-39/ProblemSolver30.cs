@@ -24,14 +24,14 @@
             SetAnswer(443839);
         }
 
-        /* Haskell solution (suboptimal, upper limit guessed)
+        /* Haskell solution
          *
          * import Data.List
          * import Data.Digits
          *
          * main = print a
          *
-         * a = foldl (+) 0 $ [x|x<-[2..999999],b x==x]
+         * a = foldl (+) 0 $ [x|x<-[2..531441],b x==x]
          * b n = foldl (+) 0 $ map (^5) $ digits 10 n
          *
          * -- Compiling: ghc -O2 -threaded<filename>.hs
