@@ -30,7 +30,6 @@
          * rotate n xs = zipWith const (drop n (cycle xs)) xs
          * circular = length [x|x<-[1..999999],isPrime x,all (isPrime) [intListToInt $ rotate n $ digits 10 x|n<-[1..(length $ digits 10 x)]]]
          *      
-         *
          * -- Compiling: ghc -O2 -threaded<filename>.hs
          * -- Execution: ./<filename.hs> +RTS -N
          * -- Done in about 2s, answer: 55.
