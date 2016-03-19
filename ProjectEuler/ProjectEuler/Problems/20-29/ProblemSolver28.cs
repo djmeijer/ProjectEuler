@@ -40,5 +40,14 @@
 
             SetAnswer(diagonalSum);
         }
+
+        /* Haskell solution
+        *
+        * main = print $ sum [4*n*n-6*n+6|n<-[3,5..1001]] + 1
+        *
+        * -- Compiling: ghc -O2 -threaded<filename>.hs
+        * -- Execution: ./<filename.hs> +RTS -N
+        * -- Done in about 0.001s, answer: 669171001.
+        */
     }
 }
