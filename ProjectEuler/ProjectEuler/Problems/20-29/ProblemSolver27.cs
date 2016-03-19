@@ -34,21 +34,21 @@
         }
 
         /* Haskell solution
-        *
-        * import Data.Sequence hiding (length, sort, reverse)
-        * import Data.Numbers.Primes
-        * import Data.Function (on)
-        * import Data.List
-        * 
-        * main = print x
-        *
-        * f a b = [n^2+a*n+b|n<-[0..72]]
-        * v a b = takeWhileL (isPrime) $ fromList $ f a b
-        * x = snd $ head $ reverse $ sort [(x,a*b)|a<-[-999..999],b<-[-999..999],x<-[length $ v a b]]
-        *
-        * -- Compiling: ghc -O2 -threaded<filename>.hs
-        * -- Execution: ./<filename.hs> +RTS -N
-        * -- Done in about 30s, answer: -59231.
-        */
+         *
+         * import Data.Sequence hiding (length, sort, reverse)
+         * import Data.Numbers.Primes
+         * import Data.Function (on)
+         * import Data.List
+         * 
+         * main = print x
+         *
+         * f a b = [n^2+a*n+b|n<-[0..72]]
+         * v a b = takeWhileL (isPrime) $ fromList $ f a b
+         * x = snd $ head $ reverse $ sort [(x,a*b)|a<-[-999..999],b<-[-999..999],x<-[length $ v a b]]
+         *
+         * -- Compiling: ghc -O2 -threaded<filename>.hs
+         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Done in about 30s, answer: -59231.
+         */
     }
 }

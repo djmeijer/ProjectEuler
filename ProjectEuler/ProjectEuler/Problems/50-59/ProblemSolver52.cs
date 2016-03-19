@@ -18,18 +18,18 @@
         }
 
         /* Haskell solution
-        *
-        * import Data.Digits
-        * import Data.List
-        *
-        * main = print l
-        *
-        * d x y = length [z|z<-[2..y],sort(digits 10 x) == sort(digits 10 (x*z))] == y-1
-        * l = head [x|x<-[1..],d x 6]
-        *
-        * -- Compiling: ghc -O2 -threaded<filename>.hs
-        * -- Execution: ./<filename.hs> +RTS -N
-        * -- Done in about 1s, answer: 142857.
-        */
+         *
+         * import Data.Digits
+         * import Data.List
+         *
+         * main = print l
+         *
+         * d x y = length [z|z<-[2..y],sort(digits 10 x) == sort(digits 10 (x*z))] == y-1
+         * l = head [x|x<-[1..],d x 6]
+         *
+         * -- Compiling: ghc -O2 -threaded<filename>.hs
+         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Done in about 1s, answer: 142857.
+         */
     }
 }
