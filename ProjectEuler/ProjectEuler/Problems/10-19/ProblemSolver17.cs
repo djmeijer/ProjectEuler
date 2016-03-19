@@ -23,7 +23,7 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             var lettersUsed = 0;
             for (var i = 1; i <= 1000; i++)

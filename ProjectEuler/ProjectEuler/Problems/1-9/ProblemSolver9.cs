@@ -12,7 +12,7 @@
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             for (var a = 0; a < 1001; a++)
                 for (var b = 0; b < 1001; b++)
@@ -20,5 +20,14 @@
                         if (a < b && b < c && a * a + b * b == c * c && a + b + c == 1000)
                             SetAnswer(a * b * c);
         }
+
+        /* Haskell solution
+        *
+        * main = print $ head[a * b * c | a < -[1..998], b < -[1..998], c < -[1..998], a < b, b < c, a * a + b * b == c * c, a + b + c == 1000]
+        *
+        * -- Compiling: ghc -O2 -threaded<filename>.hs
+        * -- Execution: ./<filename.hs> +RTS -N
+        * -- Done in about 2.5s, answer: 31875000.
+        */
     }
 }

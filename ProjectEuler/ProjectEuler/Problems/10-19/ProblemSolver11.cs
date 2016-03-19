@@ -34,7 +34,7 @@
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             long biggest = 0;
             int[][] grid =

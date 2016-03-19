@@ -26,7 +26,7 @@ namespace ProjectEuler.Problems
          * of two abundant numbers.
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             var limit = 28123;
             IEnumerable<int> abundantNumbers = GetAbundantNumbers(limit).ToList();

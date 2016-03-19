@@ -17,7 +17,7 @@
          * What is the total of all the name scores in the file?
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             SetAnswer(871198282);
         }

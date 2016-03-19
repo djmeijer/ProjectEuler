@@ -11,7 +11,7 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             var primes = Primes.Get();
             var prime = 10001;

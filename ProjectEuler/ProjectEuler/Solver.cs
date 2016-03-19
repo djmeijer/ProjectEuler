@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace ProjectEuler
 {
-    internal abstract class Solver
+    public abstract class Solver
     {
         private string _answer;
         private DateTime _end;
         private DateTime _start;
 
-        protected abstract void DoCalculation();
+        public abstract void DoCalculation();
 
         private void ShowSolution()
         {
@@ -24,7 +24,6 @@ namespace ProjectEuler
             }
             else
                 Console.WriteLine("No solution was found.");
-            Console.ReadKey();
         }
 
         public void ShowAnswer()

@@ -31,7 +31,7 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             // Convert the raw data to an List<List<int>>
             const string data =

@@ -31,7 +31,7 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             var biggest = 0;
             string[] original =

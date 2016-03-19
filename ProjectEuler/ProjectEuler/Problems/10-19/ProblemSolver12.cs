@@ -24,7 +24,7 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             long triangularNumber = 0, divisers = 0, number = 0;
             while (divisers < 502)

@@ -1,6 +1,6 @@
 ﻿namespace ProjectEuler.Problems
 {
-    internal class ProblemSolver1 : Solver
+    public class ProblemSolver1 : Solver
     {
         /* Multiples of 3 and 5
          * 
@@ -10,7 +10,7 @@
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             SetAnswer(SumDivisibleBy(3) + SumDivisibleBy(5) - SumDivisibleBy(15));
         }

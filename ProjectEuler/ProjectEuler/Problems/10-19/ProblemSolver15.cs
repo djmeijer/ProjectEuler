@@ -12,7 +12,7 @@
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             const int gridSize = 20;
             long paths = 1;

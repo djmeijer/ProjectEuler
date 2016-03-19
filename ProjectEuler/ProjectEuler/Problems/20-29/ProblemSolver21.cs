@@ -15,7 +15,7 @@
          * Evaluate the sum of all the amicable numbers under 10000.
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             SetAnswer(31626);
         }

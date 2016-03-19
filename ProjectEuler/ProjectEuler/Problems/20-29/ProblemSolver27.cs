@@ -26,7 +26,7 @@
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             SetAnswer(-59231);
         }

@@ -19,7 +19,7 @@
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             SetAnswer(443839);
         }

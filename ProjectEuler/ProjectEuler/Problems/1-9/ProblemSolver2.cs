@@ -11,7 +11,7 @@
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             const int limit = 4000000;
             int sum = 0, a = 1, b = 1, c = a + b;

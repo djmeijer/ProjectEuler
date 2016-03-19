@@ -30,7 +30,7 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        protected override void DoCalculation()
+        public override void DoCalculation()
         {
             BigInteger term = 1, a = 0, b = 1, c = 0;
             while (GetLength(c) < 1000)
