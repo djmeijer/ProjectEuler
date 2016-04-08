@@ -46,6 +46,7 @@
     <Compile Include="Problems\20-29\ProblemSolver29.cs" />
     <Compile Include="Problems\30-39\ProblemSolver34.cs" />
     <Compile Include="Problems\30-39\ProblemSolver30.cs" />
+    <Compile Include="Problems\30-39\ProblemSolver36.cs" />
     <Compile Include="Problems\30-39\ProblemSolver35.cs" />
     <Compile Include="Problems\40-49\ProblemSolver42.cs" />
     <Compile Include="Problems\40-49\ProblemSolver48.cs" />
