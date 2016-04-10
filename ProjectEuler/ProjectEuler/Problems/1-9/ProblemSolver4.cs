@@ -10,7 +10,7 @@
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             int largestPalindrome = 0, a = 999, b = 0, db = 0;
             while (a >= 100)

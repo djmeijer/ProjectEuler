@@ -9,7 +9,7 @@
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             long number = 20;
             while (

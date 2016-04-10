@@ -12,7 +12,7 @@
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             for (var a = 0; a < 1001; a++)
                 for (var b = 0; b < 1001; b++)

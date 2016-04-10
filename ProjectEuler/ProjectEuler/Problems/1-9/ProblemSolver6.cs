@@ -15,7 +15,7 @@
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             int sumOfSquares = 0, squareOfSum = 0;
             for (var i = 1; i < 101; i++)

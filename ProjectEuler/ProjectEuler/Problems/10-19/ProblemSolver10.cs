@@ -1,4 +1,6 @@
-﻿using ProjectEuler.Utilities;
+﻿using System.Linq;
+using System.Numerics;
+using ProjectEuler.Utilities;
 
 namespace ProjectEuler.Problems
 {
@@ -11,19 +13,12 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
-            var i = 0;
-            var primes = Primes.Get();
-            long total = 0;
-            while (true)
-            {
-                if (primes[i] < 2000000)
-                    total += primes[i];
-                else
-                    break;
-                i++;
-            }
+            // Use a BigInteger type to sum the primes.
+            var primes = PrimeNumberDiscoverer.Get(2000000).Select(p => (BigInteger) p);
+            var total = primes.Aggregate(BigInteger.Add);
+
             SetAnswer(total);
         }
     }

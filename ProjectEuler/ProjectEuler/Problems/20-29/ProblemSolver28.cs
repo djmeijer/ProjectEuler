@@ -20,7 +20,7 @@
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             var diagonalSum = 0;
 

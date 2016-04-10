@@ -21,7 +21,7 @@
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             long[] highestNumber = {0, 0};
             for (var i = 2; i < 1000000; i++)

@@ -10,7 +10,7 @@
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             SetAnswer(SumDivisibleBy(3) + SumDivisibleBy(5) - SumDivisibleBy(15));
         }

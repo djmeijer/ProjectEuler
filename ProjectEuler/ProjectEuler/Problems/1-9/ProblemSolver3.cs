@@ -11,7 +11,7 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             int lastFactor = 0, factor = 0;
             double maxFactor = 0;

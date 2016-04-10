@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Numerics;
 using System.Windows.Forms;
 
@@ -10,25 +11,27 @@ namespace ProjectEuler
         private DateTime _end;
         private DateTime _start;
 
-        public abstract void DoCalculation();
+        protected abstract void DoCalculation();
 
         private void ShowSolution()
         {
-            if (_answer != "")
+            if (!string.IsNullOrEmpty(_answer))
             {
                 var ts = _end - _start;
-                var speed = ts < new TimeSpan(0, 1, 0) ? "Congratulations!" : "Come on, this should be faster!";
-                Console.WriteLine("The answer is: " + _answer);
-                Console.WriteLine("Calculation was done in " + ts + "(hh:mm:ss:*). " + speed);
+                var speed = ts < new TimeSpan(0, 1, 0) ? "satisfied" : "failed to satisfy";
+                Console.WriteLine($"He found '{_answer}'.");
+                Console.WriteLine($"It took him {ts}(hh:mm:ss:*). So he {speed} the 'one-minute' rule.");
                 Clipboard.SetText(_answer);
             }
             else
-                Console.WriteLine("No solution was found.");
+            {
+                Console.WriteLine("Found a papyrus! However, it is empty.");
+            }
         }
 
         public void ShowAnswer()
         {
-            _answer = "";
+            _answer = string.Empty;
             _start = DateTime.Now;
             DoCalculation();
             _end = DateTime.Now;
@@ -52,12 +55,12 @@ namespace ProjectEuler
 
         protected void SetAnswer(double answer)
         {
-            _answer = answer.ToString();
+            _answer = answer.ToString(CultureInfo.InvariantCulture);
         }
 
         protected void SetAnswer(float answer)
         {
-            _answer = answer.ToString();
+            _answer = answer.ToString(CultureInfo.InvariantCulture);
         }
 
         protected void SetAnswer(BigInteger answer)

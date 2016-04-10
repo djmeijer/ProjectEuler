@@ -12,7 +12,7 @@
          *
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             SetAnswer(142857);
         }

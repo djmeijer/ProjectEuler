@@ -112,7 +112,7 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             string[] original =
             {

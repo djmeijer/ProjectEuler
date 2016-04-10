@@ -13,7 +13,7 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             BigInteger calc = BigInteger.Pow(2, 1000), count = 0;
             var numbers = calc.ToString();

@@ -16,7 +16,7 @@ namespace ProjectEuler.Problems
          * 
          */
 
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             var factorial = GetFactorial(100);
             SetAnswer(GetFactorialSum(factorial));

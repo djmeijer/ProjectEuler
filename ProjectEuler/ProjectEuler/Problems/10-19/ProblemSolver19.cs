@@ -4,7 +4,7 @@ namespace ProjectEuler.Problems
 {
     internal class ProblemSolver19 : Solver
     {
-        public override void DoCalculation()
+        protected override void DoCalculation()
         {
             var sundays = 0;
             var currentDay = Day.Monday;
