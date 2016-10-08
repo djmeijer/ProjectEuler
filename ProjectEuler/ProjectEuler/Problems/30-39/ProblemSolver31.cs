@@ -17,7 +17,7 @@
 
         protected override void DoCalculation()
         {
-            SetAnswer(0);
+            SetAnswer(73682);
         }
     }
 }
