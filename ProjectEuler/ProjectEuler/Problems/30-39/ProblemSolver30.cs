@@ -34,8 +34,8 @@
          * a = foldl (+) 0 $ [x|x<-[2..531441],b x==x]
          * b n = foldl (+) 0 $ map (^5) $ digits 10 n
          *
-         * -- Compiling: ghc -O2 -threaded<filename>.hs
-         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Compiling: ghc -O2 -threaded <filename>.hs
+         * -- Execution: ./<filename> +RTS -N
          * -- Done in about 1s, answer: 443839.
          */
     }

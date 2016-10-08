@@ -31,8 +31,8 @@
          * a = [x|x<-[2..100]]
          * main = print $ length $ nub[x^y|x<-a,y<-a]
          *
-         * -- Compiling: ghc -O2 -threaded<filename>.hs
-         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Compiling: ghc -O2 -threaded <filename>.hs
+         * -- Execution: ./<filename> +RTS -N
          * -- Done in about 0.5s, answer: 9183.
          */
     }

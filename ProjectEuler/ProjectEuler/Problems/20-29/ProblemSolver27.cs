@@ -46,8 +46,8 @@
          * v a b = takeWhileL (isPrime) $ fromList $ f a b
          * x = snd $ head $ reverse $ sort [(x,a*b)|a<-[-999..999],b<-[-999..999],x<-[length $ v a b]]
          *
-         * -- Compiling: ghc -O2 -threaded<filename>.hs
-         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Compiling: ghc -O2 -threaded <filename>.hs
+         * -- Execution: ./<filename> +RTS -N
          * -- Done in about 30s, answer: -59231.
          */
     }

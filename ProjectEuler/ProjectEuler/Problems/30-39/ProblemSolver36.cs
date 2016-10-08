@@ -36,8 +36,8 @@
          * sumDoubleBasePalindromes :: Int
          * sumDoubleBasePalindromes = sum [x|x<-[1..999999],isPalindrome $ show x,isPalindrome $ toBinary x]
          *      
-         * -- Compiling: ghc -O2 -threaded<filename>.hs
-         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Compiling: ghc -O2 -threaded <filename>.hs
+         * -- Execution: ./<filename> +RTS -N
          * -- Done in about 0.1s, answer: 872187.
          */
     }

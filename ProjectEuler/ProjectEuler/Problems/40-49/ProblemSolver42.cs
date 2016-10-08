@@ -41,8 +41,8 @@
          * p x = elem x s
          * o = length $ filter (p) n
          *
-         * -- Compiling: ghc -O2 -threaded<filename>.hs
-         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Compiling: ghc -O2 -threaded <filename>.hs
+         * -- Execution: ./<filename> +RTS -N
          * -- Done in about 0.1s, answer: 162.
          */
     }

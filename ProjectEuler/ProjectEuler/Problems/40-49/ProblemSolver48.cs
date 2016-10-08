@@ -19,8 +19,8 @@
          *
          * main = print (read $ reverse $ take 10 $ reverse $ show $ sum [x^x|x<-[1..1000]] :: Int)
          *
-         * -- Compiling: ghc -O2 -threaded<filename>.hs
-         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Compiling: ghc -O2 -threaded <filename>.hs
+         * -- Execution: ./<filename> +RTS -N
          * -- Done in about 0.1s, answer: 9110846700.
          */
     }

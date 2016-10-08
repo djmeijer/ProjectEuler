@@ -25,8 +25,8 @@
          *
          * main = print $ head[a * b * c | a < -[1..998], b < -[1..998], c < -[1..998], a < b, b < c, a * a + b * b == c * c, a + b + c == 1000]
          *
-         * -- Compiling: ghc -O2 -threaded<filename>.hs
-         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Compiling: ghc -O2 -threaded <filename>.hs
+         * -- Execution: ./<filename> +RTS -N
          * -- Done in about 2.5s, answer: 31875000.
          */
     }

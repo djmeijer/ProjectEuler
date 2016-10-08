@@ -25,8 +25,8 @@
          * import Data.List
          * main = print $ take 1 $ drop 999999 $ sort $ permutations[0..9]
          *
-         * -- Compiling: ghc -O2 -threaded<filename>.hs
-         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Compiling: ghc -O2 -threaded <filename>.hs
+         * -- Execution: ./<filename> +RTS -N
          * -- Done in about 6s, answer: 2783915460.
          */
     }

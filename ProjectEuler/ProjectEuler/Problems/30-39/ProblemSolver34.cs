@@ -27,8 +27,8 @@
          * f x = product [n|n<-[1..x]]
          * l = sum [x|x<-[1..999999],sum [f y|y<-digits 10 x] == x] - 3
          *
-         * -- Compiling: ghc -O2 -threaded<filename>.hs
-         * -- Execution: ./<filename.hs> +RTS -N
+         * -- Compiling: ghc -O2 -threaded <filename>.hs
+         * -- Execution: ./<filename> +RTS -N
          * -- Done in about 1.5s, answer: 40730.
          */
     }
