@@ -1,10 +1,12 @@
 ﻿main :: IO ()
-main = print $ countCoins (length coins) 200
+main = print $ payments 200 [1,2,5,10,20,50,100,200]
 
-coins :: [Integer]
-coins = [1,2,5,10,20,50,100,200]
+payments :: Int -> [Int] -> Int
+payments x a = sum test 0 x a
 
-countCoins :: Int -> Integer -> Integer
-countCoins 1 _ = 1
-countCoins n x = sum $ map addCoin [0 .. x `div` coins !! pred n]
-  where addCoin k = countCoins (pred n) (x - k * coins !! pred n)
+test :: Int -> Int -> [Int] -> Int
+test x y a
+   | x < y     = payments 1 a
+   | x == y    = 1
+   | x > y     = 0
+   | otherwise = 0
