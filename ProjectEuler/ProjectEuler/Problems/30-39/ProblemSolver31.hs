@@ -4,7 +4,6 @@ main = print $ payments 200 coins (length coins)
 coins :: [Int]
 coins = [1,2,5,10,20,50,100,200]
 
--- How does this work!?
 payments :: Int -> [Int] -> Int -> Int
 payments t c s
    | t < 0     = 0
