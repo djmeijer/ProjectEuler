@@ -12,13 +12,16 @@ import Data.Char
 -- import Criterion.Main
 
 main :: IO ()
-main = print $ answer (fraction 1) [1,10,100,1000,10000,100000,1000000]
+main = print $ answer (fraction 1) (parts 0)
 -- main = defaultMain [
---   bgroup "answer" [ bench "default" $ whnf (answer (fraction 1)) [1,10,100,1000,10000,100000,1000000] ]
+--   bgroup "answer" [ bench "default" $ whnf (answer (fraction 1)) (take 6 [10^x|x<-[1..]]) ]
 --   ]
 
+parts :: Int -> [Int]
+parts y = take 6 [10^x|x<-[y..]]
+
 fraction :: Int -> String
-fraction x = concatMap show [x ..]
+fraction x = concatMap show [x..]
 
 answer :: String -> [Int] -> Int
 answer a b = product $ map ((digitToInt . (a !!)) . subtract 1) b
