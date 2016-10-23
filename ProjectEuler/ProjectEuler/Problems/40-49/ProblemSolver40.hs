@@ -14,15 +14,14 @@ import Data.Char
 main :: IO ()
 main = print $ answer (fraction 1) [1,10,100,1000,10000,100000,1000000]
 -- main = defaultMain [
---   bgroup "answer" [ bench "default" $ whnf (answer (fraction 1)) [1,10,100,1000,10000,100000,1000000]
---                ]
+--   bgroup "answer" [ bench "default" $ whnf (answer (fraction 1)) [1,10,100,1000,10000,100000,1000000] ]
 --   ]
 
-fraction :: Int -> [Char]
-fraction x = concat $ map show [x..]
+fraction :: Int -> String
+fraction x = concatMap show [x ..]
 
-answer :: [Char] -> [Int] -> Int
-answer a b = product $ map digitToInt $ map (a !!) $ map (subtract 1) b
+answer :: String -> [Int] -> Int
+answer a b = product $ map ((digitToInt . (a !!)) . subtract 1) b
 
 -- Compilation      ghc -O2 -threaded <filename>.hs
 -- Execution        ./<filename> +RTS -N
