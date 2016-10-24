@@ -14,7 +14,7 @@ import Data.Char
 main :: IO ()
 main = print $ answer (fraction 1) (parts 0)
 -- main = defaultMain [
---   bgroup "answer" [ bench "default" $ whnf (answer (fraction 1)) (take 6 [10^x|x<-[1..]]) ]
+--   bgroup "answer" [ bench "default" $ whnf (answer (fraction 1)) (parts 0) ]
 --   ]
 
 parts :: Int -> [Int]
@@ -29,4 +29,4 @@ answer a b = product $ map ((digitToInt . (a !!)) . subtract 1) b
 -- Compilation      ghc -O2 -threaded <filename>.hs
 -- Execution        ./<filename> +RTS -N
 -- Performance      ./<filename> --output <filename>.html
---                  done in 2.825 ms, answer 210
+--                  done in 258.3 μs, answer 210
