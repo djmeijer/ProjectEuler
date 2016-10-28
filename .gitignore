@@ -156,3 +156,6 @@ $RECYCLE.BIN/
 .DS_Store
 ProblemSolver*
 !*.hs
+!*.cs
+
+ProjectEuler.userprefs
