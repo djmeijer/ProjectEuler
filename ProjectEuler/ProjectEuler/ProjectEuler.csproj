@@ -76,6 +76,8 @@
     <Compile Include="Solver.cs" />
     <Compile Include="Utilities\Date.cs" />
     <Compile Include="Utilities\PrimeNumberDiscoverer.cs" />
+    <Compile Include="Problems\30-39\ProblemSolver31.cs" />
+    <Compile Include="Problems\30-39\ProblemSolver37.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
