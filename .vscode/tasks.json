@@ -19,7 +19,7 @@
             {
                 "taskName": "run",
                 "suppressTaskName": true,
-                "args": ["echo \"${file}\" | grep -E \"ProblemSolver\\d{2}\" -o | \"${fileDirname}/$(cat -)\" +RTS -N"],
+                "args": ["echo \"${file}\" | grep -E \"ProblemSolver\\d+\" -o | \"${fileDirname}/$(cat -)\" +RTS -N"],
                 "isTestCommand": true,
                 "showOutput": "always"
             }
