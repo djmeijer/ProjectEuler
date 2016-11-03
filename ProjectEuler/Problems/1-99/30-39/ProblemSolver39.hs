@@ -35,8 +35,8 @@ main :: IO()
 main = print $ answer 1000
 -- main = defaultMain [bgroup "answer" [bench "default" $ whnf answer 1000]]
 
-answer :: Int -> (Int,Int)
-answer x = maximumBy (comparing snd) ([(p,possibilities p)|p<-[2,4..x]] `using` parList rdeepseq)
+answer :: Int -> Int
+answer x = fst $ maximumBy (comparing snd) ([(p,possibilities p)|p<-[2,4..x]] `using` parList rdeepseq)
 
 possibilities :: Int -> Int
 possibilities p = length [(a,b,c)|c<-[1..p],b<-[1..c],a<-[1..b],a+b+c==p,a*a+b*b==c*c]
