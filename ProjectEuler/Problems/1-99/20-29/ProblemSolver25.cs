@@ -43,7 +43,7 @@ namespace ProjectEuler.Problems
             SetAnswer(term);
         }
 
-        private int GetLength(BigInteger current)
+        private static int GetLength(BigInteger current)
         {
             var length = 0;
             while (current >= 10)

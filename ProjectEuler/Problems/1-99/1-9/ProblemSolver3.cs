@@ -13,8 +13,7 @@ namespace ProjectEuler.Problems
 
         protected override void DoCalculation()
         {
-            int lastFactor = 0, factor = 0;
-            double maxFactor = 0;
+            int lastFactor;
             var n = 600851475143;
             if (n % 2 == 0)
             {
@@ -25,8 +24,8 @@ namespace ProjectEuler.Problems
             }
             else
                 lastFactor = 1;
-            factor = 3;
-            maxFactor = Math.Sqrt(n);
+            var factor = 3;
+            var maxFactor = Math.Sqrt(n);
             while (n > 1 && factor <= maxFactor)
             {
                 if (n % factor == 0)

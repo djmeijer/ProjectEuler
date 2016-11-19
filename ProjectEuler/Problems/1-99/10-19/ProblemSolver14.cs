@@ -36,7 +36,7 @@
             SetAnswer(highestNumber[0]);
         }
 
-        private long GiveCollatzSequenceLength(int i)
+        private static long GiveCollatzSequenceLength(int i)
         {
             long count = 0, number = i;
             while (number > 1)

@@ -26,21 +26,21 @@ namespace ProjectEuler.Problems
 
         protected override void DoCalculation()
         {
-            long triangularNumber = 0, divisers = 0, number = 0;
-            while (divisers < 502)
+            long triangularNumber = 0, dividers = 0, number = 0;
+            while (dividers < 502)
             {
                 number++;
-                long t = GetTriangularNumber(number), d = GetNumberOfDivisersFromTriangularNumber(t);
-                if (d > divisers)
+                long t = GetTriangularNumber(number), d = GetNumberOfDividersFromTriangularNumber(t);
+                if (d > dividers)
                 {
                     triangularNumber = t;
-                    divisers = d;
+                    dividers = d;
                 }
             }
             SetAnswer(triangularNumber);
         }
 
-        public static long GetNumberOfDivisersFromTriangularNumber(long number)
+        public static long GetNumberOfDividersFromTriangularNumber(long number)
         {
             long factorCount = 0;
             long sqrt = (int) Math.Ceiling(Math.Sqrt(number));

@@ -28,7 +28,7 @@ namespace ProjectEuler.Problems
 
         protected override void DoCalculation()
         {
-            var limit = 28123;
+            const int limit = 28123;
             IEnumerable<int> abundantNumbers = GetAbundantNumbers(limit).ToList();
             IEnumerable<int> abundantSums =
                 new HashSet<int>(abundantNumbers.SelectMany(a => abundantNumbers.Select(b => a + b)));
@@ -44,7 +44,7 @@ namespace ProjectEuler.Problems
             SetAnswer(sum);
         }
 
-        private IEnumerable<int> GetAbundantNumbers(int upperLimit)
+        private static IEnumerable<int> GetAbundantNumbers(int upperLimit)
         {
             var abundantNumbers = new List<int>();
             for (var i = 1; i <= upperLimit; i++)

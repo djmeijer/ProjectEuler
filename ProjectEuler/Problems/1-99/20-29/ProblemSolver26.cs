@@ -47,14 +47,14 @@ namespace ProjectEuler.Problems
             /* A fraction of the form 1/d shown as decimal:
              * 1. Is a rounded number, an integer (1 / 1 = 1). Skip this.
              * 2. Has a limited amount of decimals (1 / 2 = 0,5). Cycle length is 0.
-             * 3. Has an unlimited amound of decimals with cycles (1 / 3 = 0,33333...). Calculate cycle length.
+             * 3. Has an unlimited amount of decimals with cycles (1 / 3 = 0,33333...). Calculate cycle length.
              */
 
             _results.TryAdd(d, HasFiniteDecimals(d) ? 0 : DetermineCycleLength(d));
         }
 
         /// <summary>
-        ///     If the factorization of the denominater only consist of 2's and/or 5's,
+        ///     If the factorization of the denominator only consist of 2's and/or 5's,
         ///     then the amount of decimals is finite.
         /// </summary>
         private static bool HasFiniteDecimals(int d)

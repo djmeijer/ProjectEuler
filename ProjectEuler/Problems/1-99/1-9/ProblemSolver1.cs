@@ -15,7 +15,7 @@
             SetAnswer(SumDivisibleBy(3) + SumDivisibleBy(5) - SumDivisibleBy(15));
         }
 
-        private int SumDivisibleBy(int n)
+        private static int SumDivisibleBy(int n)
         {
             int target = 999, p = target / n;
             return n * p * (p + 1) / 2;

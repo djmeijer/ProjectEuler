@@ -12,10 +12,12 @@
 
         protected override void DoCalculation()
         {
-            int largestPalindrome = 0, a = 999, b = 0, db = 0;
-            while (a >= 100)
+          int largestPalindrome = 0, a = 999;
+          while (a >= 100)
             {
-                if (a % 11 == 0)
+              int b;
+              int db;
+              if (a % 11 == 0)
                 {
                     b = 999;
                     db = 1;
@@ -38,12 +40,12 @@
             SetAnswer(largestPalindrome);
         }
 
-        private bool IsPalindrome(int n)
+        private static bool IsPalindrome(int n)
         {
             return n == Reverse(n);
         }
 
-        private int Reverse(int n)
+        private static int Reverse(int n)
         {
             var reversed = 0;
             while (n > 0)

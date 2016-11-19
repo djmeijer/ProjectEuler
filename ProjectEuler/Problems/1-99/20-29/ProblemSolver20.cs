@@ -22,7 +22,7 @@ namespace ProjectEuler.Problems
             SetAnswer(GetFactorialSum(factorial));
         }
 
-        private BigInteger GetFactorial(int i)
+        private static BigInteger GetFactorial(int i)
         {
             BigInteger factorial = i;
             i--;
@@ -34,7 +34,7 @@ namespace ProjectEuler.Problems
             return factorial;
         }
 
-        private BigInteger GetFactorialSum(BigInteger factorial)
+        private static BigInteger GetFactorialSum(BigInteger factorial)
         {
             BigInteger sum = 0;
             while (factorial >= 10)

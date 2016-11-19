@@ -2,7 +2,7 @@
 {
     internal class ProblemSolver28 : Solver
     {
-        /* Number spirals diagoanls
+        /* Number spirals diagonals
          * 
          * Starting with the number 1 and moving to the right in
          * a clockwise direction a 5 by 5 spiral is formed as follows:
