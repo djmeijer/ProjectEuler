@@ -33,15 +33,11 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Problems\1-99\30-39\bin\Main.hi" />
-    <None Include="Problems\1-99\30-39\bin\Main.o" />
-    <None Include="Problems\1-99\40-49\bin\Main.hi" />
-    <None Include="Problems\1-99\40-49\bin\Main.o" />
-    <None Include="Problems\500-599\540-549\bin\.DS_Store" />
-    <None Include="Problems\500-599\540-549\bin\Main.hi" />
-    <None Include="Problems\500-599\540-549\bin\Main.o" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Problems\1-99\30-39\ProblemSolver33.cs" />
+    <Compile Include="Problems\1-99\30-39\ProblemSolver38.cs" />
+    <Compile Include="Problems\1-99\40-49\ProblemSolver45.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Utilities\Date.cs" />
@@ -95,15 +91,7 @@
     <Reference Include="System.Numerics" />
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Problems\" />
-    <Folder Include="Problems\" />
-    <Folder Include="Problems\" />
-    <Folder Include="Problems\" />
-    <Folder Include="Problems\" />
-    <Folder Include="Problems\" />
-    <Folder Include="Problems\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

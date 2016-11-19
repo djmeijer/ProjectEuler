@@ -53,6 +53,11 @@ namespace ProjectEuler
             _answer = answer.ToString();
         }
 
+        protected void SetAnswer(ulong answer)
+        {
+            _answer = answer.ToString();
+        }
+
         protected void SetAnswer(double answer)
         {
             _answer = answer.ToString(CultureInfo.InvariantCulture);
