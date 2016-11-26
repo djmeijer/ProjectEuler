@@ -10,35 +10,45 @@ Find the next triangle number that is also pentagonal and hexagonal.
 
 Problem analysis
 ----------------
-- 
+- Make custom implementation for intersection of infinite lists.
 
 Runtime information
 -------------------
 Compilation      ghc -O2 -threaded <filename>.hs
 Execution        ./<filename> +RTS -N
                  for performance run output use: --output <filename>.html
-Time             
-Answer           
+Time             4.793 ms
+Answer           1533776805
 -}
 
-import Data.List
 -- import Criterion.Main
 
 main :: IO()
-main = print $ answer 2
--- main = defaultMain [bgroup "answer" [bench "default" $ whnf answer (9999,9)]]
+main = print $ head (answer [])
+-- main = defaultMain [bgroup "answer" [bench "default" $ whnf answer []]]
 
-answer :: Int -> [Int]
-answer x = take x [n|n<-[1..],isElemOf n]
+answer :: [Int] -> [Int]
+answer is = intersectedElements is (1,1) (1,1) (1,1)
 
-isElemOf :: Int -> Bool
-isElemOf x = elem x (triangleNumbers `intersect` pentagonalNumbers `intersect` hexagonalNumbers)
+intersectedElements :: [Int] -> (Int,Int) -> (Int,Int) -> (Int,Int) -> [Int]
+intersectedElements is tt pt ht
+ | length is == 3   = is
+ | t > p            = intersectedElements is tt (pentagonalNumber pt) ht
+ | t > h            = intersectedElements is tt pt (hexagonalNumber ht)
+ | t == p && t == h = intersectedElements (t:is) (triangleNumber tt) pt ht
+ | otherwise        = intersectedElements is (triangleNumber tt) pt ht
+ where t = snd tt
+       p = snd pt
+       h = snd ht
 
-triangleNumbers :: [Int]
-triangleNumbers = [div (2*n+n) 2|n<-[1..300]]
+triangleNumber :: (Int,Int) -> (Int,Int)
+triangleNumber nt = (n, div (n * n + n) 2)
+ where n = fst nt + 1
 
-pentagonalNumbers :: [Int]
-pentagonalNumbers = [div (3*n*n-n) 2|n<-[1..300]]
+pentagonalNumber :: (Int,Int) -> (Int,Int)
+pentagonalNumber nt = (n, div (3 * n * n - n) 2)
+ where n = fst nt + 1
 
-hexagonalNumbers :: [Int]
-hexagonalNumbers = [2*n*n-n|n<-[1..300]]
+hexagonalNumber :: (Int,Int) -> (Int,Int)
+hexagonalNumber nt = (n, 2 * n * n - n)
+ where n = fst nt + 1
