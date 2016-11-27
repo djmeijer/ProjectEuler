@@ -38,9 +38,12 @@
     <Compile Include="Problems\1-99\30-39\ProblemSolver33.cs" />
     <Compile Include="Problems\1-99\30-39\ProblemSolver38.cs" />
     <Compile Include="Problems\1-99\40-49\ProblemSolver45.cs" />
+    <Compile Include="Problems\1-99\80-89\ProblemSolver81.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Utilities\Date.cs" />
+    <Compile Include="Utilities\ListExtensions.cs" />
+    <Compile Include="Utilities\MinimumPriorityQueue.cs" />
     <Compile Include="Utilities\PrimeNumberDiscoverer.cs" />
     <Compile Include="Problems\1-99\1-9\ProblemSolver1.cs" />
     <Compile Include="Problems\1-99\1-9\ProblemSolver2.cs" />
