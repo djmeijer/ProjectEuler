@@ -41,7 +41,6 @@ namespace ProjectEuler.Utilities
             DecreaseElementPriority(element);
         }
 
-
         /// <summary>
         /// Minimums this instance.
         /// </summary>
@@ -82,8 +81,6 @@ namespace ProjectEuler.Utilities
             MinHeapify(0);
             return minimum;
         }
-
-
 
         /// <summary>
         ///  Decreases the position of the given element to it's correct position in the queue.
