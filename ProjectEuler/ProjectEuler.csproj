@@ -42,6 +42,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Solver.cs" />
     <Compile Include="Utilities\Date.cs" />
+    <Compile Include="Utilities\DijkstraShortestPath.cs" />
     <Compile Include="Utilities\ListExtensions.cs" />
     <Compile Include="Utilities\MinimumPriorityQueue.cs" />
     <Compile Include="Utilities\PrimeNumberDiscoverer.cs" />

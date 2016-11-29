@@ -26,7 +26,7 @@ namespace ProjectEuler.Problems
         protected override void DoCalculation()
         {
             List<Vertex> vertices = GetVertices().ToList();
-            int shortestPath = DijkstraShortestPath(new Graph(vertices), vertices.First(), vertices.Last());
+            int shortestPath = Dijkstra.GetShortestPath(new Graph(vertices), vertices.First(), vertices.Last());
             SetAnswer(shortestPath);
         }
 
@@ -59,78 +59,5 @@ namespace ProjectEuler.Problems
         }
 
         private static List<int> GetVerticalBorders(int c, int t, int w) => c < t ? new List<int> { c }.Union(GetVerticalBorders(c + w, t, w)).ToList() : new List<int> { c };
-
-        private static int DijkstraShortestPath(Graph graph, Vertex source, Vertex target)
-        {
-            InitializeSingleSource(graph, source);
-            var s = new List<Vertex>();
-            var q = new MinimumPriorityQueue<Vertex>(v => v.ShortestPathValue, graph.GetVertices().Count());
-            foreach(Vertex vertex in graph.GetVertices())
-            {
-                q.Insert(vertex);
-            }
-            while(!s.Contains(target))
-            {
-                var u = q.ExtractMinimum();
-                s.Add(u);
-                foreach(Vertex v in u.Successors)
-                {
-                    Relax(q, u, v);
-                }
-            }
-            return target.ShortestPathValue;
-        }
-
-        private static void Relax(MinimumPriorityQueue<Vertex> q, Vertex u, Vertex v)
-        {
-            var newShortestPathValue = u.ShortestPathValue + v.IncomingEdgeValue;
-            if(newShortestPathValue < v.ShortestPathValue)
-            {
-                v.ShortestPathValue = newShortestPathValue;
-                v.Predecessor = u;
-                q.DecreaseElementPriority(v);
-            }
-        }
-
-        private static void InitializeSingleSource(Graph graph, Vertex source)
-        {
-            foreach(Vertex v in graph.GetVertices())
-            {
-                v.ShortestPathValue = int.MaxValue;
-                v.Predecessor = null;
-            }
-            source.ShortestPathValue = source.IncomingEdgeValue;
-        }
-    }
-
-    internal class Vertex
-    {
-        public Vertex(int incomingEdgeValue)
-        {
-            IncomingEdgeValue = incomingEdgeValue;
-            Successors = new List<Vertex>();
-        }
-
-        public int ShortestPathValue { get; set; }
-
-        public int IncomingEdgeValue { get; }
-
-        public Vertex Predecessor { get; set; }
-
-        public List<Vertex> Successors { get; set; }
-
-        public override string ToString() => IncomingEdgeValue.ToString();
-    }
-
-    internal class Graph
-    {
-        private readonly IEnumerable<Vertex> _vertices;
-
-        public Graph(IEnumerable<Vertex> vertices)
-        {
-            _vertices = vertices;
-        }
-
-        public IEnumerable<Vertex> GetVertices() => _vertices;
     }
 }
