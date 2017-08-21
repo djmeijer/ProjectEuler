@@ -12,23 +12,25 @@ namespace ProjectEuler
             int problemNumber;
             while (int.TryParse(Console.ReadLine(), out problemNumber))
             {
-                try
+                Type type = Type.GetType($"ProjectEuler.Problems.ProblemSolver{problemNumber}");
+
+                if (type == null)
                 {
-                    var type = Type.GetType($"ProjectEuler.Problems.ProblemSolver{problemNumber}");
-
-                    if (type == null)
-                    {
-                        throw new Exception();
-                    }
-
+                    Console.WriteLine("My apologies sir. Not even a single weird Greek parchment on this topic.");
+                }
+                else
+                {
                     var problem = Activator.CreateInstance(type);
 
                     var answer = type.GetMethod("ShowAnswer");
-                    answer.Invoke(problem, null);
-                }
-                catch
-                {
-                    Console.WriteLine("My apologies sir. Not even a single weird Greek parchment on this topic.");
+                    try
+                    {
+                        answer.Invoke(problem, null);
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.InnerException);
+                    }
                 }
             }
         }

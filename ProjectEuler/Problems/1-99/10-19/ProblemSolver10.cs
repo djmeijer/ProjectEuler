@@ -16,10 +16,10 @@ namespace ProjectEuler.Problems
         protected override void DoCalculation()
         {
             // Use a BigInteger type to sum the primes.
-            var primes = PrimeNumberDiscoverer.Get(2000000).Select(p => (BigInteger) p);
+            var primes = new PrimeLibrary().GetAllPrimesLessThanValue(2000000).Select(p => (BigInteger) p);
             var total = primes.Aggregate(BigInteger.Add);
 
-            SetAnswer(total);
+            SetAnswer(total); // 142913828922
         }
     }
 }

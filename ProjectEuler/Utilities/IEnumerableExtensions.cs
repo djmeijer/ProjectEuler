@@ -2,7 +2,7 @@
 
 namespace ProjectEuler.Utilities
 {
-    public static class ListExtensions
+    public static class IEnumerableExtensions
     {
         public static IEnumerable<T> Intersperse<T>(this IEnumerable<T> items, T separator)
         {

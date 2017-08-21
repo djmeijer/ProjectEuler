@@ -32,7 +32,7 @@ namespace ProjectEuler.Problems
          */
 
         private static readonly Tuple<int, int> _bounds = new Tuple<int, int>(2, 999);
-        private static readonly IEnumerable<int> _primes = PrimeNumberDiscoverer.Get(_bounds.Item2);
+        private static readonly IEnumerable<int> _primes = new PrimeLibrary().GetAllPrimesLessThanValue(_bounds.Item2);
         private readonly ConcurrentDictionary<int, int> _results = new ConcurrentDictionary<int, int>();
 
         protected override void DoCalculation()

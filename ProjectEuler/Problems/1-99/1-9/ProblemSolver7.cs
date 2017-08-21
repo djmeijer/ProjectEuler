@@ -14,8 +14,8 @@ namespace ProjectEuler.Problems
 
         protected override void DoCalculation()
         {
-            var prime = PrimeNumberDiscoverer.Take(10001).Last();
-            SetAnswer(prime);
+            var prime = new PrimeLibrary().Take(10001).Last();
+            SetAnswer(prime); // 104743
         }
     }
 }
