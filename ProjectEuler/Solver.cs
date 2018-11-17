@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Globalization;
 using System.Numerics;
-using System.Windows.Forms;
 
 namespace ProjectEuler
 {
@@ -21,7 +20,7 @@ namespace ProjectEuler
                 var speed = ts < new TimeSpan(0, 1, 0) ? "satisfied" : "failed to satisfy";
                 Console.WriteLine($"He found '{_answer}'.");
                 Console.WriteLine($"It took him {ts}(hh:mm:ss:*). So he {speed} the 'one-minute' rule.");
-                Clipboard.SetText(_answer);
+                Console.WriteLine(_answer);
             }
             else
             {
