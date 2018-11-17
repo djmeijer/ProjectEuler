@@ -9,8 +9,7 @@ namespace ProjectEuler
         {
             Console.WriteLine("When you enter a positive integer I will send the librarian to look for an answer on this specific problem. There is no guarantee he will return with usefull data. It's even unclear whether he will return before the universe implodes.");
 
-            int problemNumber;
-            while (int.TryParse(Console.ReadLine(), out problemNumber))
+            while (int.TryParse(Console.ReadLine(), out int problemNumber))
             {
                 Type type = Type.GetType($"ProjectEuler.Problems.ProblemSolver{problemNumber}");
 

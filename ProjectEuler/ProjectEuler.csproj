@@ -90,6 +90,7 @@
     <Compile Include="Problems\1-99\40-49\ProblemSolver40.cs" />
     <Compile Include="Problems\500-599\540-549\ProblemSolver549.cs" />
     <Compile Include="Problems\1-99\50-59\ProblemSolver50.cs" />
+    <Compile Include="Problems\1-99\40-49\ProblemSolver44.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

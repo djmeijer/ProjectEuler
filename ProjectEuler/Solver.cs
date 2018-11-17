@@ -38,44 +38,20 @@ namespace ProjectEuler
             ShowSolution();
         }
 
-        protected void SetAnswer(string answer)
-        {
-            _answer = answer;
-        }
+        protected void SetAnswer(string answer) => _answer = answer;
 
-        protected void SetAnswer(int answer)
-        {
-            _answer = answer.ToString();
-        }
+        protected void SetAnswer(int answer) => _answer = answer.ToString();
 
-        protected void SetAnswer(long answer)
-        {
-            _answer = answer.ToString();
-        }
+        protected void SetAnswer(long answer) => _answer = answer.ToString();
 
-        protected void SetAnswer(ulong answer)
-        {
-            _answer = answer.ToString();
-        }
+        protected void SetAnswer(ulong answer) => _answer = answer.ToString();
 
-        protected void SetAnswer(double answer)
-        {
-            _answer = answer.ToString(CultureInfo.InvariantCulture);
-        }
+        protected void SetAnswer(double answer) => _answer = answer.ToString(CultureInfo.InvariantCulture);
 
-        protected void SetAnswer(float answer)
-        {
-            _answer = answer.ToString(CultureInfo.InvariantCulture);
-        }
+        protected void SetAnswer(float answer) => _answer = answer.ToString(CultureInfo.InvariantCulture);
 
-        protected void SetAnswer(BigInteger answer)
-        {
-            _answer = answer.ToString();
-        }
+        protected void SetAnswer(BigInteger answer) => _answer = answer.ToString();
 
-        protected void SetAnswer(bool answer)
-        {
-            _answer = answer.ToString();
-        }
+        protected void SetAnswer(bool answer) => _answer = answer.ToString();
     }
 }
