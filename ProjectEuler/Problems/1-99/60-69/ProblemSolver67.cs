@@ -43,19 +43,19 @@ namespace ProjectEuler.Problems
                     .ToList())
                 .ToList();
             var maximumTotal = triangle.Aggregate(
-                new List<int> {0},
-                (currentMaxima, nextRow) =>
-                {
-                    var rowLength = nextRow.Count;
-                    return nextRow
-                        .Select((cell, index) =>
-                            index == 0
-                                ? cell + currentMaxima[index]
-                                : index == rowLength - 1
-                                    ? cell + currentMaxima[index - 1]
-                                    : Math.Max(cell + currentMaxima[index - 1], cell + currentMaxima[index]))
-                        .ToList();
-                }
+                    new List<int> {0},
+                    (currentMaxima, nextRow) =>
+                    {
+                        var rowLength = nextRow.Count;
+                        return nextRow
+                            .Select((cell, index) =>
+                                index == 0
+                                    ? cell + currentMaxima[index]
+                                    : index == rowLength - 1
+                                        ? cell + currentMaxima[index - 1]
+                                        : Math.Max(cell + currentMaxima[index - 1], cell + currentMaxima[index]))
+                            .ToList();
+                    }
                 )
                 .Max();
             SetAnswer(maximumTotal);

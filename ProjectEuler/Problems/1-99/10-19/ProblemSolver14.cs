@@ -33,6 +33,7 @@
                     highestNumber[1] = result;
                 }
             }
+
             SetAnswer(highestNumber[0]);
         }
 
@@ -40,7 +41,6 @@
         {
             long count = 0, number = i;
             while (number > 1)
-            {
                 if (number % 2 == 0)
                 {
                     number /= 2;
@@ -51,7 +51,7 @@
                     number = 3 * number + 1;
                     count++;
                 }
-            }
+
             return count + 1;
         }
     }

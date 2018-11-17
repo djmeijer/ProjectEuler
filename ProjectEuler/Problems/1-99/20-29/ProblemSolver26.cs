@@ -79,10 +79,7 @@ namespace ProjectEuler.Problems
         private static int DetermineCycleLength(int d)
         {
             // How to calculate case with prefixed cycles?
-            if (BigInteger.GreatestCommonDivisor(10, d) != 1)
-            {
-                return -1;
-            }
+            if (BigInteger.GreatestCommonDivisor(10, d) != 1) return -1;
 
             var found = false;
             var length = 0;
@@ -91,6 +88,7 @@ namespace ProjectEuler.Problems
                 length++;
                 found = (BigInteger.Pow(10, length) % d).Equals(1);
             }
+
             return length;
         }
     }

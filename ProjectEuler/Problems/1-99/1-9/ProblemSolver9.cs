@@ -15,10 +15,10 @@
         protected override void DoCalculation()
         {
             for (var a = 0; a < 1001; a++)
-                for (var b = 0; b < 1001; b++)
-                    for (var c = 0; c < 1001; c++)
-                        if (a < b && b < c && a * a + b * b == c * c && a + b + c == 1000)
-                            SetAnswer(a * b * c);
+            for (var b = 0; b < 1001; b++)
+            for (var c = 0; c < 1001; c++)
+                if (a < b && b < c && a * a + b * b == c * c && a + b + c == 1000)
+                    SetAnswer(a * b * c);
         }
 
         /* Haskell solution

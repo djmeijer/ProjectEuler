@@ -3,79 +3,81 @@ using System.Linq;
 
 namespace ProjectEuler.Utilities
 {
-  public static class Dijkstra
-  {
-    public static int GetShortestPath(Graph graph, Vertex source, Vertex target)
+    public static class Dijkstra
     {
-      InitializeSingleSource(graph, source);
-      var s = new List<Vertex>();
-      var q = new MinimumPriorityQueue<Vertex>(v => v.ShortestPathValue, graph.GetVertices().Count());
-      foreach(Vertex vertex in graph.GetVertices())
-      {
-        q.Insert(vertex);
-      }
-      while(!s.Contains(target))
-      {
-        var u = q.ExtractMinimum();
-        s.Add(u);
-        foreach(Vertex v in u.Successors)
+        public static int GetShortestPath(Graph graph, Vertex source, Vertex target)
         {
-          Relax(q, u, v);
+            InitializeSingleSource(graph, source);
+            var s = new List<Vertex>();
+            var q = new MinimumPriorityQueue<Vertex>(v => v.ShortestPathValue, graph.GetVertices().Count());
+            foreach (var vertex in graph.GetVertices()) q.Insert(vertex);
+            while (!s.Contains(target))
+            {
+                var u = q.ExtractMinimum();
+                s.Add(u);
+                foreach (var v in u.Successors) Relax(q, u, v);
+            }
+
+            return target.ShortestPathValue;
         }
-      }
-      return target.ShortestPathValue;
+
+        private static void Relax(MinimumPriorityQueue<Vertex> q, Vertex u, Vertex v)
+        {
+            var newShortestPathValue = u.ShortestPathValue + v.IncomingEdgeValue;
+            if (newShortestPathValue < v.ShortestPathValue)
+            {
+                v.ShortestPathValue = newShortestPathValue;
+                v.Predecessor = u;
+                q.DecreaseElementPriority(v);
+            }
+        }
+
+        private static void InitializeSingleSource(Graph graph, Vertex source)
+        {
+            foreach (var v in graph.GetVertices())
+            {
+                v.ShortestPathValue = int.MaxValue;
+                v.Predecessor = null;
+            }
+
+            source.ShortestPathValue = source.IncomingEdgeValue;
+        }
     }
 
-    private static void Relax(MinimumPriorityQueue<Vertex> q, Vertex u, Vertex v)
+    public class Vertex
     {
-      var newShortestPathValue = u.ShortestPathValue + v.IncomingEdgeValue;
-      if(newShortestPathValue < v.ShortestPathValue)
-      {
-        v.ShortestPathValue = newShortestPathValue;
-        v.Predecessor = u;
-        q.DecreaseElementPriority(v);
-      }
+        public Vertex(int incomingEdgeValue)
+        {
+            IncomingEdgeValue = incomingEdgeValue;
+            Successors = new List<Vertex>();
+        }
+
+        public int ShortestPathValue { get; set; }
+
+        public int IncomingEdgeValue { get; }
+
+        public Vertex Predecessor { get; set; }
+
+        public List<Vertex> Successors { get; set; }
+
+        public override string ToString()
+        {
+            return IncomingEdgeValue.ToString();
+        }
     }
 
-    private static void InitializeSingleSource(Graph graph, Vertex source)
+    public class Graph
     {
-      foreach(Vertex v in graph.GetVertices())
-      {
-        v.ShortestPathValue = int.MaxValue;
-        v.Predecessor = null;
-      }
-      source.ShortestPathValue = source.IncomingEdgeValue;
+        private readonly IEnumerable<Vertex> _vertices;
+
+        public Graph(IEnumerable<Vertex> vertices)
+        {
+            _vertices = vertices;
+        }
+
+        public IEnumerable<Vertex> GetVertices()
+        {
+            return _vertices;
+        }
     }
-  }
-
-  public class Vertex
-  {
-    public Vertex(int incomingEdgeValue)
-    {
-      IncomingEdgeValue = incomingEdgeValue;
-      Successors = new List<Vertex>();
-    }
-
-    public int ShortestPathValue { get; set; }
-
-    public int IncomingEdgeValue { get; }
-
-    public Vertex Predecessor { get; set; }
-
-    public List<Vertex> Successors { get; set; }
-
-    public override string ToString() => IncomingEdgeValue.ToString();
-  }
-
-  public class Graph
-  {
-    private readonly IEnumerable<Vertex> _vertices;
-
-    public Graph(IEnumerable<Vertex> vertices)
-    {
-      _vertices = vertices;
-    }
-
-    public IEnumerable<Vertex> GetVertices() => _vertices;
-  }
 }

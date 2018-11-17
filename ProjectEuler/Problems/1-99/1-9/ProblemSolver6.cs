@@ -23,6 +23,7 @@
                 sumOfSquares += i * i;
                 squareOfSum += i;
             }
+
             squareOfSum *= squareOfSum;
             SetAnswer(squareOfSum - sumOfSquares);
         }

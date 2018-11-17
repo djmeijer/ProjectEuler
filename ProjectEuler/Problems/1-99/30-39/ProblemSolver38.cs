@@ -1,6 +1,6 @@
 namespace ProjectEuler.Problems
 {
-  internal class ProblemSolver38 : Solver
+    internal class ProblemSolver38 : Solver
     {
         protected override void DoCalculation()
         {

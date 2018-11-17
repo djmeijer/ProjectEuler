@@ -22,6 +22,7 @@
                 b = c + a;
                 c = a + b;
             }
+
             SetAnswer(sum);
         }
     }

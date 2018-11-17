@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using ProjectEuler.Utilities;
 
@@ -43,6 +42,7 @@ namespace ProjectEuler.Problems
                     currentPrimes.Dequeue();
                     CheckForTopscore();
                 }
+
                 currentPrimes.Enqueue(p);
                 CheckForTopscore();
             }

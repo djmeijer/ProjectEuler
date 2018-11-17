@@ -6,17 +6,13 @@ namespace ProjectEuler.Utilities
     {
         public static IEnumerable<T> Intersperse<T>(this IEnumerable<T> items, T separator)
         {
-            bool first = true;
-            foreach(T item in items)
+            var first = true;
+            foreach (var item in items)
             {
-                if(first)
-                {
-                   first = false;
-                }
+                if (first)
+                    first = false;
                 else
-                {
                     yield return separator;
-                }
                 yield return item;
             }
         }

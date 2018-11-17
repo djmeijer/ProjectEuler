@@ -35,12 +35,8 @@ namespace ProjectEuler.Problems
 
             var sum = 0;
             for (var i = 1; i <= limit; i++)
-            {
                 if (!abundantSums.Contains(i))
-                {
                     sum += i;
-                }
-            }
             SetAnswer(sum);
         }
 
@@ -51,17 +47,11 @@ namespace ProjectEuler.Problems
             {
                 var sum = 0;
                 for (var j = 1; j < i; j++)
-                {
                     if (i % j == 0)
-                    {
                         sum += j;
-                    }
-                }
-                if (sum > i)
-                {
-                    abundantNumbers.Add(i);
-                }
+                if (sum > i) abundantNumbers.Add(i);
             }
+
             return abundantNumbers;
         }
 

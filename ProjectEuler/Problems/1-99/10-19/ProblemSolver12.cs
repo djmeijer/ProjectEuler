@@ -37,6 +37,7 @@ namespace ProjectEuler.Problems
                     dividers = d;
                 }
             }
+
             SetAnswer(triangularNumber);
         }
 

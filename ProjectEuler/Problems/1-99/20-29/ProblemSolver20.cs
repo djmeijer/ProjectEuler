@@ -31,6 +31,7 @@ namespace ProjectEuler.Problems
                 factorial *= i;
                 i--;
             }
+
             return factorial;
         }
 
@@ -42,6 +43,7 @@ namespace ProjectEuler.Problems
                 sum += factorial % 10;
                 factorial /= 10;
             }
+
             sum += factorial % 10;
             return sum;
         }

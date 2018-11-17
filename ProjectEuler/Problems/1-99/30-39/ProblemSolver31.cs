@@ -26,92 +26,68 @@ namespace ProjectEuler.Problems
 
         private static int CalculateRecursive()
         {
-            var coins = new List<int> { 1, 2, 5, 10, 20, 50, 100, 200 };
+            var coins = new List<int> {1, 2, 5, 10, 20, 50, 100, 200};
             return Payments(coins, coins.Count, 200);
         }
 
         private static int Payments(IReadOnlyList<int> coins, int length, int amount)
         {
-            if (amount < 0)
-            {
-              return 0;
-            }
-            if (amount == 0)
-            {
-              return 1;
-            }
-            if (length == 1)
-            {
-              return 1;
-            }
+            if (amount < 0) return 0;
+            if (amount == 0) return 1;
+            if (length == 1) return 1;
             return Payments(coins, length - 1, amount) + Payments(coins, length, amount - coins[length - 1]);
         }
 
         private int CalculateNaive()
         {
-          // Naive implementation.
-          int[] coins = { 1, 2, 5, 10, 20, 50, 100, 200 };
-          const int amount = 200;
-          int possibilities = 0;
+            // Naive implementation.
+            int[] coins = {1, 2, 5, 10, 20, 50, 100, 200};
+            const int amount = 200;
+            var possibilities = 0;
 
-          for (int a = 0; a <= amount; a++)
-          {
-            var aa = a * coins[0];
-            if (aa <= amount)
+            for (var a = 0; a <= amount; a++)
             {
-              for (int b = 0; b <= amount; b++)
-              {
-                var bb = b * coins[1];
-                if (aa + bb <= amount)
-                {
-                  for (int c = 0; c <= amount; c++)
-                  {
-                    var cc = c * coins[2];
-                    if (aa + bb + cc <= amount)
+                var aa = a * coins[0];
+                if (aa <= amount)
+                    for (var b = 0; b <= amount; b++)
                     {
-                      for (int d = 0; d <= amount; d++)
-                      {
-                        var dd = d * coins[3];
-                        if (aa + bb + cc + dd <= amount)
-                        {
-                          for (int e = 0; e <= amount; e++)
-                          {
-                            var ee = e * coins[4];
-                            if (aa + bb + cc + dd + ee <= amount)
+                        var bb = b * coins[1];
+                        if (aa + bb <= amount)
+                            for (var c = 0; c <= amount; c++)
                             {
-                              for (int f = 0; f <= amount; f++)
-                              {
-                                var ff = f * coins[5];
-                                if (aa + bb + cc + dd + ee + ff <= amount)
-                                {
-                                  for (int g = 0; g <= amount; g++)
-                                  {
-                                    var gg = g * coins[6];
-                                    if (aa + bb + cc + dd + ee + ff + gg <= amount)
+                                var cc = c * coins[2];
+                                if (aa + bb + cc <= amount)
+                                    for (var d = 0; d <= amount; d++)
                                     {
-                                      for (int h = 0; h <= amount; h++)
-                                      {
-                                        var hh = h * coins[7];
-                                        if (aa + bb + cc + dd + ee + ff + gg + hh == amount)
-                                        {
-                                          possibilities++;
-                                        }
-                                      }
+                                        var dd = d * coins[3];
+                                        if (aa + bb + cc + dd <= amount)
+                                            for (var e = 0; e <= amount; e++)
+                                            {
+                                                var ee = e * coins[4];
+                                                if (aa + bb + cc + dd + ee <= amount)
+                                                    for (var f = 0; f <= amount; f++)
+                                                    {
+                                                        var ff = f * coins[5];
+                                                        if (aa + bb + cc + dd + ee + ff <= amount)
+                                                            for (var g = 0; g <= amount; g++)
+                                                            {
+                                                                var gg = g * coins[6];
+                                                                if (aa + bb + cc + dd + ee + ff + gg <= amount)
+                                                                    for (var h = 0; h <= amount; h++)
+                                                                    {
+                                                                        var hh = h * coins[7];
+                                                                        if (aa + bb + cc + dd + ee + ff + gg + hh ==
+                                                                            amount) possibilities++;
+                                                                    }
+                                                            }
+                                                    }
+                                            }
                                     }
-                                  }
-                                }
-                              }
                             }
-                          }
-                        }
-                      }
                     }
-                  }
-                }
-              }
             }
-          }
-          return possibilities;
+
+            return possibilities;
         }
     }
 }

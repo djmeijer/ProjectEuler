@@ -23,7 +23,10 @@ namespace ProjectEuler.Problems
                     n /= 2;
             }
             else
+            {
                 lastFactor = 1;
+            }
+
             var factor = 3;
             var maxFactor = Math.Sqrt(n);
             while (n > 1 && factor <= maxFactor)
@@ -36,8 +39,10 @@ namespace ProjectEuler.Problems
                         n /= factor;
                     maxFactor = Math.Sqrt(n);
                 }
+
                 factor += 2;
             }
+
             if (n == 1)
                 SetAnswer(lastFactor);
             else

@@ -28,10 +28,7 @@
             for (var n = 1001; n >= 3; n = n - 2)
             {
                 var tr = n * n;
-                for (var i = 1; i <= 3; i++)
-                {
-                    diagonalSum += tr - i * (n - 1);
-                }
+                for (var i = 1; i <= 3; i++) diagonalSum += tr - i * (n - 1);
                 diagonalSum += tr;
             }
 

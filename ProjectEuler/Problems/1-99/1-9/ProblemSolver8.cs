@@ -65,6 +65,7 @@ namespace ProjectEuler.Problems
                 if (product > biggest)
                     biggest = product;
             }
+
             SetAnswer(biggest);
         }
     }

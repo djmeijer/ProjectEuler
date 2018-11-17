@@ -12,12 +12,12 @@
 
         protected override void DoCalculation()
         {
-          int largestPalindrome = 0, a = 999;
-          while (a >= 100)
+            int largestPalindrome = 0, a = 999;
+            while (a >= 100)
             {
-              int b;
-              int db;
-              if (a % 11 == 0)
+                int b;
+                int db;
+                if (a % 11 == 0)
                 {
                     b = 999;
                     db = 1;
@@ -27,6 +27,7 @@
                     b = 990; // The largest number less than or equal 999 and divisible by 11
                     db = 11;
                 }
+
                 while (b >= a)
                 {
                     if (a * b <= largestPalindrome)
@@ -35,8 +36,10 @@
                         largestPalindrome = a * b;
                     b -= db;
                 }
+
                 a -= 1;
             }
+
             SetAnswer(largestPalindrome);
         }
 
@@ -53,6 +56,7 @@
                 reversed = 10 * reversed + n % 10;
                 n /= 10;
             }
+
             return reversed;
         }
     }

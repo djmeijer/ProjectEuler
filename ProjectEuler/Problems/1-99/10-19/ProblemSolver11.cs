@@ -63,57 +63,57 @@
 
             // Vertical
             for (var y = 3; y < grid.Length; y++)
-                for (var x = 0; x < grid[0].Length; x++)
-                {
-                    long calc = grid[y][x] * grid[y - 1][x] * grid[y - 2][x] * grid[y - 3][x];
-                    if (calc > biggest)
-                        biggest = calc;
-                }
+            for (var x = 0; x < grid[0].Length; x++)
+            {
+                long calc = grid[y][x] * grid[y - 1][x] * grid[y - 2][x] * grid[y - 3][x];
+                if (calc > biggest)
+                    biggest = calc;
+            }
 
             // Horizontal
             for (var y = 0; y < grid.Length; y++)
-                for (var x = 0; x < grid[0].Length - 4; x++)
-                {
-                    long calc = grid[y][x] * grid[y][x + 1] * grid[y][x + 2] * grid[y][x + 3];
-                    if (calc > biggest)
-                        biggest = calc;
-                }
+            for (var x = 0; x < grid[0].Length - 4; x++)
+            {
+                long calc = grid[y][x] * grid[y][x + 1] * grid[y][x + 2] * grid[y][x + 3];
+                if (calc > biggest)
+                    biggest = calc;
+            }
 
             // Top-right
             for (var y = 3; y < grid.Length; y++)
-                for (var x = 0; x < grid[0].Length - 4; x++)
-                {
-                    long calc = grid[y][x] * grid[y - 1][x + 1] * grid[y - 2][x + 2] * grid[y - 3][x + 3];
-                    if (calc > biggest)
-                        biggest = calc;
-                }
+            for (var x = 0; x < grid[0].Length - 4; x++)
+            {
+                long calc = grid[y][x] * grid[y - 1][x + 1] * grid[y - 2][x + 2] * grid[y - 3][x + 3];
+                if (calc > biggest)
+                    biggest = calc;
+            }
 
             // Bottom-right
             for (var y = 0; y < grid.Length - 4; y++)
-                for (var x = 0; x < grid[0].Length - 4; x++)
-                {
-                    long calc = grid[y][x] * grid[y + 1][x + 1] * grid[y + 2][x + 2] * grid[y + 3][x + 3];
-                    if (calc > biggest)
-                        biggest = calc;
-                }
+            for (var x = 0; x < grid[0].Length - 4; x++)
+            {
+                long calc = grid[y][x] * grid[y + 1][x + 1] * grid[y + 2][x + 2] * grid[y + 3][x + 3];
+                if (calc > biggest)
+                    biggest = calc;
+            }
 
             // Bottom-left
             for (var y = 0; y < grid.Length - 4; y++)
-                for (var x = 3; x < grid[0].Length; x++)
-                {
-                    long calc = grid[y][x] * grid[y + 1][x - 1] * grid[y + 2][x - 2] * grid[y + 3][x - 3];
-                    if (calc > biggest)
-                        biggest = calc;
-                }
+            for (var x = 3; x < grid[0].Length; x++)
+            {
+                long calc = grid[y][x] * grid[y + 1][x - 1] * grid[y + 2][x - 2] * grid[y + 3][x - 3];
+                if (calc > biggest)
+                    biggest = calc;
+            }
 
             // Top-left
             for (var y = 3; y < grid.Length; y++)
-                for (var x = 3; x < grid[0].Length; x++)
-                {
-                    long calc = grid[y][x] * grid[y - 1][x - 1] * grid[y - 2][x - 2] * grid[y - 3][x - 3];
-                    if (calc > biggest)
-                        biggest = calc;
-                }
+            for (var x = 3; x < grid[0].Length; x++)
+            {
+                long calc = grid[y][x] * grid[y - 1][x - 1] * grid[y - 2][x - 2] * grid[y - 3][x - 3];
+                if (calc > biggest)
+                    biggest = calc;
+            }
 
             SetAnswer(biggest);
         }

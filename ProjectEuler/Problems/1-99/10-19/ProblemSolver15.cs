@@ -22,6 +22,7 @@
                 paths *= 2 * gridSize - i;
                 paths /= i + 1;
             }
+
             SetAnswer(paths);
         }
     }

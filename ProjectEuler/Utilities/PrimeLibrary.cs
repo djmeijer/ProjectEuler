@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 
 namespace ProjectEuler.Utilities
 {
@@ -17,10 +16,7 @@ namespace ProjectEuler.Utilities
 
             while (n < int.MaxValue)
             {
-                if (IsPrime(n))
-                {
-                    yield return n;
-                }
+                if (IsPrime(n)) yield return n;
                 n++;
             }
         }
@@ -38,26 +34,19 @@ namespace ProjectEuler.Utilities
              * see http://mathworld.wolfram.com/PrimeNumberTheorem.html.
              * π(n)∼n/(ln n-1.08366)
              */
-            Func<int, int> estimationLegendre = x => (int)(x / (Math.Log(x) - 1.08366));
-            var pi = n < 20 ? n : estimationLegendre(n);
+            int EstimationLegendre(int x) => (int) (x / (Math.Log(x) - 1.08366));
+            var pi = n < 20 ? n : EstimationLegendre(n);
 
             return this.Take(pi).Where(p => p < n);
         }
 
         public static bool IsPrime(int n)
         {
-            if (n % 2 == 0)
-            {
-                return false;
-            }
+            if (n % 2 == 0) return false;
 
             for (var i = 3; i < Math.Sqrt(n) + 1; i += 2)
-            {
                 if (n % i == 0)
-                {
                     return false;
-                }
-            }
 
             return true;
         }

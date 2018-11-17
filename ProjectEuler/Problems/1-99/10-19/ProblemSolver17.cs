@@ -74,7 +74,9 @@ namespace ProjectEuler.Problems
             #endregion
 
             if (digits.Count == 4)
+            {
                 text = words[0] + " " + words[20];
+            }
             else
             {
                 if (digits.Count == 3)
@@ -84,9 +86,13 @@ namespace ProjectEuler.Problems
                     if (i > 0)
                         text += words[21] + " ";
                 }
+
                 if (i >= 0 && i <= 19)
+                {
                     if (i > 0 && i <= 12)
+                    {
                         text += words[i - 1];
+                    }
                     else
                     {
                         if (i == 13)
@@ -99,6 +105,7 @@ namespace ProjectEuler.Problems
                             text += words[i - 3];
                         text += words[12];
                     }
+                }
                 else
                 {
                     if (digits[1] == 2)
@@ -117,6 +124,7 @@ namespace ProjectEuler.Problems
                         text += "-" + words[digits[0] - 1];
                 }
             }
+
             return text;
         }
 
@@ -128,6 +136,7 @@ namespace ProjectEuler.Problems
                 digits.Add(i % 10);
                 i /= 10;
             }
+
             digits.Add(i % 10);
             return digits;
         }

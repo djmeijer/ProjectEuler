@@ -9,22 +9,23 @@ namespace ProjectEuler.Problems
             var sundays = 0;
             var currentDay = Day.Monday;
             for (var year = 1900; year <= 2000; year++)
-                for (var month = 1; month <= 12; month++)
-                    for (var day = 1; day <= GetNumberOfDays(year, month); day++)
-                    {
-                        if (currentDay == Day.Sunday && day == 1 && year > 1900)
-                            sundays++;
-                        if (currentDay == Day.Saturday)
-                            currentDay = Day.Sunday;
-                        else
-                            currentDay++;
-                    }
+            for (var month = 1; month <= 12; month++)
+            for (var day = 1; day <= GetNumberOfDays(year, month); day++)
+            {
+                if (currentDay == Day.Sunday && day == 1 && year > 1900)
+                    sundays++;
+                if (currentDay == Day.Saturday)
+                    currentDay = Day.Sunday;
+                else
+                    currentDay++;
+            }
+
             SetAnswer(sundays);
         }
 
         private static bool IsLeapYear(int year)
         {
-            return year % 4 == 0 && (year % 100 != 0 || (year % 400 == 0));
+            return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
         }
 
         private static int GetNumberOfDays(int year, int month)

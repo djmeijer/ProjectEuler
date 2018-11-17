@@ -40,6 +40,7 @@ namespace ProjectEuler.Problems
                 a = b;
                 b = c;
             }
+
             SetAnswer(term);
         }
 
@@ -51,7 +52,8 @@ namespace ProjectEuler.Problems
                 length++;
                 current /= 10;
             }
-            length ++;
+
+            length++;
             return length;
         }
     }
